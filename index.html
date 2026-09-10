@@ -4,329 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dorothy Tepace · Aspiring UI/UX Focus</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: #fff9f0;
-      color: #1e1e2a;
-      line-height: 1.5;
-      padding: 1.5rem;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      top: -50%; left: -20%;
-      width: 120%; height: 120%;
-      background: radial-gradient(circle at 20% 30%, rgba(255, 200, 150, 0.3) 0%, transparent 35%),
-                  radial-gradient(circle at 90% 70%, rgba(130, 200, 255, 0.3) 0%, transparent 40%),
-                  radial-gradient(circle at 40% 80%, rgba(200, 150, 255, 0.2) 0%, transparent 45%);
-      z-index: -2;
-      animation: floatBlobs 18s infinite alternate ease-in-out;
-    }
-    @keyframes floatBlobs {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(3%, -3%) scale(1.05); }
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      border-radius: 2.5rem;
-      padding: 2rem 2.5rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      position: relative;
-      overflow: hidden;
-    }
-    h1 {
-      font-size: 3.2rem;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #1e1e2a 0%, #4a2e8a 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    h2 {
-      font-size: 1.8rem;
-      display: inline-block;
-      border-bottom: 4px solid #ffb347;
-      padding-bottom: 0.25rem;
-      margin-bottom: 1.5rem;
-      color: #2d1e5e;
-    }
-    .tagline {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #2d2d44;
-      background: #fff0dd;
-      display: inline-block;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      border: 2px dashed #ffb347;
-      margin: 0.5rem 0 1rem;
-    }
-    section { margin-bottom: 3.5rem; scroll-margin-top: 2rem; }
-    .hero { display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin-top: 0.5rem; }
-    .hero-avatar { flex: 1 1 200px; text-align: center; }
-    .avatar-img {
-      width: 200px; height: 200px;
-      background: linear-gradient(145deg, #ffd6a5, #b8a9ff);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 6rem;
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(255, 255, 255, 0.7);
-      transition: transform 0.3s ease;
-      overflow: hidden;
-      margin: 0 auto;
-    }
-    .avatar-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-    }
-    .avatar-img:hover { transform: scale(1.02) rotate(2deg); }
-    .hero-text { flex: 2 1 350px; }
-    .fun-fact {
-      background: #e8f0ff;
-      padding: 0.8rem 1.2rem;
-      border-radius: 30px;
-      font-size: 1rem;
-      border-left: 8px solid #7c6aff;
-      margin-top: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .fun-fact i { color: #7c6aff; font-size: 1.4rem; }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.8rem;
-      margin-top: 1rem;
-    }
-    .project-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 2rem;
-      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
-      transition: all 0.25s ease;
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card:hover {
-      transform: translateY(-6px) rotate(-0.5deg);
-      box-shadow: 0 24px 36px -12px rgba(80, 60, 180, 0.25);
-      border-color: #ffb347;
-    }
-    .project-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .project-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .project-card p { color: #444; margin-bottom: 1rem; flex-grow: 1; }
-    .project-tag {
-      display: inline-block;
-      background: #f0e9ff;
-      padding: 0.25rem 0.9rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #3d2a7c;
-      align-self: flex-start;
-    }
-    .project-card.featured {
-      background: linear-gradient(145deg, #fff9f0, #f3ecff);
-      border: 2px solid #ffb347;
-      grid-column: span 2;
-    }
-    @media (max-width: 700px) {
-      .project-card.featured { grid-column: span 1; }
-    }
-    .project-card.featured h3 { font-size: 1.7rem; }
-    .project-meta {
-      font-size: 0.85rem;
-      color: #5e3db0;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-    .workflow-wrap { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; }
-    .tool-box {
-      flex: 1 1 200px;
-      background: #fff3e7;
-      border-radius: 1.8rem;
-      padding: 1.5rem;
-      border: 3px dotted #ffb347;
-    }
-    .tool-box h3 { font-size: 1.4rem; margin-bottom: 1rem; }
-    .tool-list { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; }
-    .tool-list li {
-      background: white;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-weight: 500;
-    }
-    .workflow-steps { flex: 1 1 280px; }
-    .step { display: flex; gap: 12px; margin-bottom: 1.2rem; align-items: flex-start; }
-    .step-num {
-      background: #2d1e5e;
-      color: white;
-      width: 32px; height: 32px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700;
-      flex-shrink: 0;
-      box-shadow: 0 4px 0 #ffb347;
-    }
-    .contact-flex {
-      display: flex; flex-wrap: wrap; gap: 2rem;
-      align-items: center; justify-content: space-between;
-      background: #e4d9ff;
-      border-radius: 3rem;
-      padding: 2rem;
-      border: 3px solid white;
-      box-shadow: 0 8px 0 #2d1e5e;
-    }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 1.8rem; align-items: center; }
-    .contact-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 1.1rem; font-weight: 500;
-      background: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 60px;
-      box-shadow: 0 4px 0 #b8a9ff;
-      text-decoration: none;
-      color: #1e1e2a;
-      transition: all 0.15s ease;
-    }
-    .contact-item i { font-size: 1.4rem; color: #5e3db0; }
-    .contact-item:hover { transform: translateY(-2px); background: #fff5e9; }
-    .qr-placeholder {
-      width: 120px; height: 120px;
-      background: repeating-linear-gradient(45deg, #1e1e2a 0px, #1e1e2a 6px, white 6px, white 12px);
-      border-radius: 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem; font-weight: 700; color: white;
-      text-shadow: 0 0 4px black;
-      box-shadow: 0 12px 0 #7c6aff;
-    }
-    .pitch {
-      margin-top: 2rem;
-      padding-top: 1rem;
-      border-top: 2px dashed rgba(0, 0, 0, 0.1);
-      display: flex; flex-wrap: wrap; justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-      color: #3d3d5a;
-    }
-    .pitch-text {
-      max-width: 70%;
-      font-style: italic;
-      background: #fff0dd;
-      padding: 0.7rem 1.4rem;
-      border-radius: 40px;
-    }
 
-    /* ---------- SIDE NAVIGATION ---------- */
-    .side-nav {
-      position: fixed;
-      top: 50%;
-      left: 1.2rem;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      z-index: 100;
-      padding: 1rem 0.7rem;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 60px;
-      box-shadow: 0 8px 24px rgba(80, 60, 180, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.9);
-    }
-    .side-link {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.7rem 1rem;
-      border-radius: 40px;
-      text-decoration: none;
-      color: #2d1e5e;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .side-link .nav-icon {
-      font-size: 1.4rem;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-    .side-link .nav-label {
-      opacity: 0;
-      max-width: 0;
-      overflow: hidden;
-      transition: all 0.25s ease;
-    }
-    .side-link:hover {
-      background: #ffb347;
-      transform: translateX(4px);
-    }
-    .side-link:hover .nav-label {
-      opacity: 1;
-      max-width: 80px;
-    }
-    .side-link:hover .nav-icon {
-      transform: scale(1.15) rotate(-6deg);
-    }
-    .side-link.active {
-      background: #7c6aff;
-      color: white;
-    }
-    .side-link.active .nav-icon {
-      transform: scale(1.1);
-    }
-
-    @media (min-width: 900px) {
-      body { padding-left: 6rem; }
-    }
-    @media (max-width: 900px) {
-      .side-nav {
-        top: auto;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: row;
-        border-radius: 60px;
-        padding: 0.6rem 0.9rem;
-        gap: 0.5rem;
-      }
-      .side-link { padding: 0.5rem 0.7rem; }
-      .side-link .nav-label { display: none; }
-      .side-link .nav-icon { font-size: 1.5rem; }
-      body { padding-bottom: 5.5rem; }
-    }
-    @media (max-width: 400px) {
-      .side-link { padding: 0.4rem 0.5rem; }
-      .side-link .nav-icon { font-size: 1.3rem; }
-    }
-    @media (max-width: 700px) {
-      .container { padding: 1.5rem; }
-      h1 { font-size: 2.5rem; }
-      .hero { flex-direction: column; text-align: center; }
-      .avatar-img { width: 160px; height: 160px; font-size: 5rem; }
-      .contact-flex { flex-direction: column; align-items: flex-start; }
-      .pitch-text { max-width: 100%; margin-bottom: 1rem; }
-    }
-  </style>
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -339,6 +27,7 @@
   </nav>
 
   <div class="container">
+
     <!-- ========== WHO I AM ========== -->
     <section id="who">
       <div class="hero">
@@ -366,7 +55,7 @@
       <h2>⚡ what i do</h2>
       <div class="projects-grid">
 
-        <!-- FEATURED PROJECT: CSN de Cebu Web -->
+        <!-- FEATURED: CSN de Cebu Web -->
         <div class="project-card featured">
           <div class="project-icon">⛪</div>
           <div class="project-meta">FEATURED · FULL-STACK · IN PROGRESS</div>
@@ -381,14 +70,14 @@
           <span class="project-tag">Next.js · TypeScript · Tailwind · Supabase</span>
         </div>
 
-        <!-- PROJECT 2: Archdiocesan Convention 2026 -->
+        <!-- PROJECT 2: Archdiocesan Convention -->
         <div class="project-card">
           <div class="project-icon">🎪</div>
-          <div class="project-meta">DESIGN LEAD · PRODUCTION TEAM</div>
-          <h3>Archdiocesan Echo Convention 2026</h3>
+          <div class="project-meta">DESIGN LEAD · PRODUCTION TEAM · OCT 2026</div>
+          <h3>archdiocesan convention 2026</h3>
           <p>
             Serving on the production team for the <strong>1st Archdiocesan Convention 
-            of Cofradia del Sto. Niño de Cebu</strong> — a gathering of all registered chapters across the 
+            of CSN de Cebu</strong> — a gathering of all registered chapters across the 
             Philippines, happening October 2026 at Cebu Business Hotel. As design lead, 
             dance lead, and registration team member, I'm creating posters, the stage 
             backdrop, program booklet, event shirts, and presentation slides in Canva.
@@ -396,7 +85,7 @@
           <span class="project-tag">Design Lead · Canva · Event</span>
         </div>
 
-        <!-- PROJECT 3: placeholder (to be replaced) -->
+        <!-- PROJECT 3: placeholder -->
         <div class="project-card">
           <div class="project-icon">🎨</div>
           <h3>design experiments</h3>
@@ -426,10 +115,10 @@
           <p style="margin-top: 1.2rem; font-size: 0.95rem;">+ always exploring new tools 🧪</p>
         </div>
         <div class="workflow-steps">
-          <div class="step"><div class="step-num">1</div><div><strong>sketch & dream</strong> — pen and paper first, always.</div></div>
+          <div class="step"><div class="step-num">1</div><div><strong>sketch &amp; dream</strong> — pen and paper first, always.</div></div>
           <div class="step"><div class="step-num">2</div><div><strong>prototype fast</strong> — code small, test with friends.</div></div>
-          <div class="step"><div class="step-num">3</div><div><strong>polish & animate</strong> — micro-interactions make it memorable.</div></div>
-          <div class="step"><div class="step-num">4</div><div><strong>ship & share</strong> — GitHub Pages is my best friend.</div></div>
+          <div class="step"><div class="step-num">3</div><div><strong>polish &amp; animate</strong> — micro-interactions make it memorable.</div></div>
+          <div class="step"><div class="step-num">4</div><div><strong>ship &amp; share</strong> — GitHub Pages is my best friend.</div></div>
         </div>
       </div>
     </section>
@@ -463,6 +152,7 @@
       </div>
       <div style="font-size: 0.9rem; color: #5e5e7a;">© Dorothy Tepace · 2025</div>
     </div>
+
   </div>
 
   <!-- ========== ACTIVE SECTION HIGHLIGHT ========== -->
