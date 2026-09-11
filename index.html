@@ -12,6 +12,15 @@
 </head>
 <body>
 
+  <!-- ========== SPLASH OVERLAY (plays on first load) ========== -->
+  <div class="splash-overlay" id="splashOverlay">
+    <div class="splash-stage">
+      <div class="splash-dot"></div>
+      <div class="splash-name">DOROTHY TEPACE</div>
+      <div class="splash-tagline">creative · responsive · ambitious</div>
+    </div>
+  </div>
+
   <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
@@ -34,7 +43,6 @@
   <!-- ========== MAIN ========== -->
   <main class="page">
 
-    <!-- HERO -->
     <section class="hero-home">
       <div class="hero-avatar">
         <div class="avatar-ring">
@@ -44,7 +52,6 @@
       <div class="hero-text">
         <h1>Dorothy Tepace</h1>
 
-        <!-- Typing animation -->
         <div class="typing-wrap">
           <span class="typing-text" id="typingText"></span>
           <span class="typing-cursor">|</span>
@@ -57,7 +64,6 @@
       </div>
     </section>
 
-    <!-- TEASER CARDS -->
     <section class="teaser-grid">
 
       <div class="teaser-card">
@@ -84,7 +90,6 @@
 
     </section>
 
-    <!-- CTA BUTTONS -->
     <section class="cta-row">
       <a href="projects.html" class="btn btn-primary">See my work →</a>
       <a href="reach.html" class="btn btn-secondary">Get in touch</a>
@@ -162,7 +167,25 @@
 
   <!-- ========== SCRIPTS ========== -->
   <script>
-    /* NAV SWAP */
+    /* ========== SPLASH ON FIRST LOAD ========== */
+    const splashOverlay = document.getElementById('splashOverlay');
+    const splashShown = sessionStorage.getItem('splashShown');
+
+    if (splashShown) {
+      splashOverlay.style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        splashOverlay.classList.add('fade-out');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          splashOverlay.style.display = 'none';
+        }, 700);
+        sessionStorage.setItem('splashShown', 'true');
+      }, 3000);
+    }
+
+    /* ========== NAV SWAP ========== */
     const topNav = document.getElementById('topNav');
     const sideNav = document.getElementById('sideNav');
 
@@ -177,7 +200,7 @@
       }
     });
 
-    /* TYPING ANIMATION */
+    /* ========== TYPING ANIMATION ========== */
     const typingText = document.getElementById('typingText');
     const roles = [
       'front-end developer',
@@ -217,7 +240,7 @@
 
     typeLoop();
 
-    /* GALLERY LIGHTBOX */
+    /* ========== GALLERY LIGHTBOX ========== */
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightboxContent');
     const lightboxCaption = document.getElementById('lightboxCaption');
