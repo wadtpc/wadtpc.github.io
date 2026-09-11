@@ -99,10 +99,11 @@
   </footer>
 
   <script>
+      /* ========== NAV SWAP ON SCROLL ========== */
     const topNav = document.getElementById('topNav');
     const sideNav = document.getElementById('sideNav');
 
-    window.addEventListener('scroll', () => {
+    function updateNav() {
       const y = window.scrollY;
       if (y > 200) {
         topNav.classList.add('hidden');
@@ -111,7 +112,10 @@
         topNav.classList.remove('hidden');
         sideNav.classList.remove('visible');
       }
-    });
+    }
+
+    window.addEventListener('scroll', updateNav);
+    window.addEventListener('load', updateNav);
 
     const projects = {
       csn: {
