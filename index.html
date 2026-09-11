@@ -6,13 +6,12 @@
   <title>Dorothy Tepace · Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== SPLASH OVERLAY (plays on first load) ========== -->
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-stage">
       <div class="splash-dot"></div>
@@ -21,7 +20,6 @@
     </div>
   </div>
 
-  <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -32,7 +30,6 @@
     </ul>
   </nav>
 
-  <!-- ========== SIDE NAV ========== -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link" title="Home"><span class="nav-icon">🏠</span><span class="nav-label">home</span></a>
     <a href="about.html" class="side-link" title="About"><span class="nav-icon">👤</span><span class="nav-label">about</span></a>
@@ -40,7 +37,6 @@
     <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-icon">📬</span><span class="nav-label">reach</span></a>
   </nav>
 
-  <!-- ========== MAIN ========== -->
   <main class="page">
 
     <section class="hero-home">
@@ -95,7 +91,6 @@
       <a href="reach.html" class="btn btn-secondary">Get in touch</a>
     </section>
 
-    <!-- ========== BEYOND CODE GALLERY ========== -->
     <section class="beyond-code">
       <header class="beyond-header">
         <h2>Beyond Code</h2>
@@ -151,7 +146,6 @@
 
   </main>
 
-  <!-- ========== LIGHTBOX ========== -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-inner">
       <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
@@ -160,14 +154,11 @@
     </div>
   </div>
 
-  <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     © Dorothy Tepace · 2026
   </footer>
 
-  <!-- ========== SCRIPTS ========== -->
   <script>
-    /* ========== SPLASH ON FIRST LOAD ========== */
     const splashOverlay = document.getElementById('splashOverlay');
     const splashShown = sessionStorage.getItem('splashShown');
 
@@ -185,7 +176,6 @@
       }, 3000);
     }
 
-    /* ========== NAV SWAP ========== */
     const topNav = document.getElementById('topNav');
     const sideNav = document.getElementById('sideNav');
 
@@ -200,7 +190,6 @@
       }
     });
 
-    /* ========== TYPING ANIMATION ========== */
     const typingText = document.getElementById('typingText');
     const roles = [
       'front-end developer',
@@ -240,7 +229,6 @@
 
     typeLoop();
 
-    /* ========== GALLERY LIGHTBOX ========== */
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightboxContent');
     const lightboxCaption = document.getElementById('lightboxCaption');
