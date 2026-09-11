@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dorothy Tepace · Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="top-nav" id="topNav">
+    <a href="index.html" class="brand">DT</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="reach.html">Reach Me</a></li>
+    </ul>
+  </nav>
+
+  <nav class="side-nav" id="sideNav">
+    <a href="index.html" class="side-link" title="Home"><span class="nav-icon">🏠</span><span class="nav-label">home</span></a>
+    <a href="about.html" class="side-link" title="About"><span class="nav-icon">👤</span><span class="nav-label">about</span></a>
+    <a href="projects.html" class="side-link" title="Projects"><span class="nav-icon">⚡</span><span class="nav-label">work</span></a>
+    <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-icon">📬</span><span class="nav-label">reach</span></a>
+  </nav>
+
+  <main class="page">
+
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p class="page-subtitle">Things I've built, designed, and led. Click a card to see more.</p>
+    </header>
+
+    <section class="projects-grid-v2">
+
+      <div class="proj-card" data-project="csn">
+        <div class="proj-icon">⛪</div>
+        <div class="proj-meta">FEATURED · FULL-STACK · IN PROGRESS</div>
+        <h3>CSN de Cebu Web</h3>
+        <p>A full-stack management platform for a multi-chapter church organization in Cebu.</p>
+        <div class="proj-tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span></div>
+        <div class="proj-open">Click for details →</div>
+      </div>
+
+      <div class="proj-card" data-project="mindcheck">
+        <div class="proj-icon">🧠</div>
+        <div class="proj-meta">UI/UX · GROUP PROJECT</div>
+        <h3>MindCheck</h3>
+        <p>A mood-adaptive student wellness app that personalizes study strategies in real time.</p>
+        <div class="proj-tags"><span>UI/UX</span><span>Figma</span><span>Research</span></div>
+        <div class="proj-open">Click for details →</div>
+      </div>
+
+      <div class="proj-card" data-project="vccafe">
+        <div class="proj-icon">☕</div>
+        <div class="proj-meta">WEB DEV · GROUP PROJECT</div>
+        <h3>VC Cafe Booking</h3>
+        <p>An online booking system for a mobile coffee shop serving events and pop-ups.</p>
+        <div class="proj-tags"><span>Web Dev</span><span>System Design</span><span>UX</span></div>
+        <div class="proj-open">Click for details →</div>
+      </div>
+
+      <div class="proj-card" data-project="portfolio">
+        <div class="proj-icon">🌐</div>
+        <div class="proj-meta">FRONT-END · PERSONAL</div>
+        <h3>Developer Portfolio</h3>
+        <p>This very site — designed and built from scratch with HTML, CSS, and JavaScript.</p>
+        <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="proj-open">Click for details →</div>
+      </div>
+
+      <div class="proj-card" data-project="convention">
+        <div class="proj-icon">🎪</div>
+        <div class="proj-meta">DESIGN LEAD · PRODUCTION · OCT 2026</div>
+        <h3>Archdiocesan Convention 2026</h3>
+        <p>Design lead and production team member for the 1st Archdiocesan Convention of CSN de Cebu.</p>
+        <div class="proj-tags"><span>Design</span><span>Leadership</span><span>Canva</span></div>
+        <div class="proj-open">Click for details →</div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © Dorothy Tepace · 2026
+  </footer>
+
+  <script>
+    const topNav = document.getElementById('topNav');
+    const sideNav = document.getElementById('sideNav');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 200) {
+        topNav.classList.add('hidden');
+        sideNav.classList.add('visible');
+      } else {
+        topNav.classList.remove('hidden');
+        sideNav.classList.remove('visible');
+      }
+    });
+
+    const projects = {
+      csn: {
+        icon: '⛪',
+        meta: 'FEATURED · FULL-STACK · IN PROGRESS',
+        title: 'CSN de Cebu Web',
+        body: `
+          <p>A full-stack management platform built for a multi-chapter religious 
+          organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>.</p>
+          <h4>What it does</h4>
+          <ul>
+            <li>Member registration & login</li>
+            <li>Data Privacy Act (RA 10173) consent flow</li>
+            <li>Role-based dashboards (admin vs member)</li>
+            <li>Announcements management</li>
+            <li>Member directory</li>
+            <li>Chapter auto-assignment based on address</li>
+            <li>Events calendar (in progress)</li>
+            <li>Attendance tracking (planned)</li>
+            <li>Payment history (planned)</li>
+          </ul>
+          <h4>Tech Stack</h4>
+          <div class="modal-tags">
+            <span>Next.js 16</span><span>TypeScript</span><span>Tailwind CSS</span>
+            <span>Supabase</span><span>GitHub</span><span>Vercel</span>
+          </div>
+          <h4>Highlights</h4>
+          <ul>
+            <li>Built a legally compliant consent system most student projects skip</li>
+            <li>Role-based auth with auto-redirect logic</li>
+            <li>Full-stack: from design to database to deployment</li>
+          </ul>
+        `
+      },
+      mindcheck: {
+        icon: '🧠',
+        meta: 'UI/UX · GROUP PROJECT · TECHMINDS',
+        title: 'MindCheck Student Wellness',
+        body: `
+          <p>A <strong>mood-to-study tracker</strong> that adapts learning based on how a 
+          student feels — in real time. Built with TechMinds Group 3.</p>
+          <h4>The Problem</h4>
+          <ul>
+            <li>77% of students feel overwhelmed by studies</li>
+            <li>60% say stress hurts their academic performance</li>
+            <li>1 in 3 students avoid studying due to anxiety</li>
+          </ul>
+          <h4>What It Does</h4>
+          <ul>
+            <li>Quick 30-second mood check-in with emoji states</li>
+            <li>Adaptive study recommendations based on emotional state</li>
+            <li>Mood-performance dashboard showing weekly trends</li>
+            <li>AI emotion classifier from journal entries</li>
+            <li>AI study coach chatbot</li>
+          </ul>
+          <h4>My Role</h4>
+          <p><strong>UI/UX Design</strong> — contributed to the interface design, 
+          user flow, and research on how mood connects to learning retention.</p>
+          <h4>Tech Stack</h4>
+          <div class="modal-tags">
+            <span>Figma</span><span>React Native</span><span>REST APIs</span>
+            <span>UI/UX</span><span>Research</span>
+          </div>
+        `
+      },
+      vccafe: {
+        icon: '☕',
+        meta: 'WEB DEV · GROUP PROJECT · GROUP 5',
+        title: 'VC Cafe Pop-Up Cart Booking System',
+        body: `
+          <p>An <strong>online booking system</strong> for VC Cafe, a mobile coffee shop 
+          serving events like weddings, birthdays, and corporate pop-ups.</p>
+          <h4>The Problem</h4>
+          <p>VC Cafe managed bookings through calls, DMs, and word of mouth — inefficient 
+          and unscalable as the business grew.</p>
+          <h4>The Solution</h4>
+          <ul>
+            <li>Web-based booking platform for events</li>
+            <li>Customer information & reservation management</li>
+            <li>Admin dashboard for staff to manage bookings</li>
+            <li>Clean, user-friendly interface for non-tech users</li>
+            <li>Role-based access for admins and customers</li>
+          </ul>
+          <h4>Scope & Limitations</h4>
+          <ul>
+            <li>Web-only (no mobile app in v1)</li>
+            <li>Payment integration postponed</li>
+            <li>Single language (English)</li>
+          </ul>
+          <h4>My Role</h4>
+          <p><strong>Web Development & System Design</strong> — contributed to the 
+          proposal, objectives, and system architecture for the booking platform.</p>
+          <h4>Team</h4>
+          <p>Group 5: de la Cruz, Reales, Romagos, Tepace</p>
+        `
+      },
+      portfolio: {
+        icon: '🌐',
+        meta: 'FRONT-END · PERSONAL · LIVE',
+        title: 'Developer Portfolio',
+        body: `
+          <p>This very website — designed and built from scratch as a personal 
+          front-end and UI/UX project.</p>
+          <h4>What I Built</h4>
+          <ul>
+            <li>Multi-page site: Home · About · Projects · Reach Me</li>
+            <li>Custom rose/ivory/burgundy color system</li>
+            <li>Rose Bloom splash animation</li>
+            <li>Top nav + auto-appearing side nav on scroll</li>
+            <li>Click-to-open modal popups for each project</li>
+            <li>Fully responsive (desktop, tablet, mobile)</li>
+          </ul>
+          <h4>Tech Stack</h4>
+          <div class="modal-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            <span>GitHub Pages</span>
+          </div>
+          <h4>Live Site</h4>
+          <p><a href="https://wadtpc.github.io" target="_blank">wadtpc.github.io</a></p>
+        `
+      },
+      convention: {
+        icon: '🎪',
+        meta: 'DESIGN LEAD · PRODUCTION · OCT 2026',
+        title: 'Archdiocesan Convention 2026',
+        body: `
+          <p>Serving on the production team for the <strong>1st Archdiocesan Convention 
+          of CSN de Cebu</strong> — a gathering of all registered chapters across the 
+          Philippines.</p>
+          <h4>My Roles</h4>
+          <ul>
+            <li>🎨 <strong>Design Lead</strong> — visual identity & event collateral</li>
+            <li>💃 <strong>Dance Lead</strong> — choreography & performance</li>
+            <li>📋 <strong>Registration Team</strong> — member coordination</li>
+          </ul>
+          <h4>What I'm Designing</h4>
+          <ul>
+            <li>Posters & flyers</li>
+            <li>Stage backdrop</li>
+            <li>Program booklet</li>
+            <li>Event shirts & merch</li>
+            <li>Presentation slides</li>
+          </ul>
+          <h4>Details</h4>
+          <ul>
+            <li>📅 October 2026</li>
+            <li>📍 Cebu Business Hotel</li>
+            <li>🌍 All registered chapters across the Philippines</li>
+            <li>🎯 Purpose: Unity</li>
+          </ul>
+          <h4>Tools</h4>
+          <div class="modal-tags">
+            <span>Canva</span><span>Design</span><span>Leadership</span>
+          </div>
+        `
+      }
+    };
+
+    const overlay = document.getElementById('modalOverlay');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.proj-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const key = card.dataset.project;
+        const p = projects[key];
+        if (!p) return;
+
+        modalBody.innerHTML = `
+          <div class="modal-header">
+            <div class="modal-icon">${p.icon}</div>
+            <div class="modal-meta">${p.meta}</div>
+            <h2>${p.title}</h2>
+          </div>
+          <div class="modal-content">${p.body}</div>
+        `;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

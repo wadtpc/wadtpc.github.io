@@ -3,174 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dorothy Tepace · Aspiring UI/UX Focus</title>
-
-  <!-- Google Fonts -->
+  <title>Dorothy Tepace · Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-  <!-- Your Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== SIDE NAVIGATION ========== -->
-  <nav class="side-nav">
-    <a href="#who"   class="side-link" title="Who I Am">  <span class="nav-icon">👋</span> <span class="nav-label">who</span>   </a>
-    <a href="#what"  class="side-link" title="What I Do">  <span class="nav-icon">⚡</span> <span class="nav-label">work</span>  </a>
-    <a href="#how"   class="side-link" title="How I Work"> <span class="nav-icon">🛠️</span> <span class="nav-label">how</span>   </a>
-    <a href="#reach" class="side-link" title="Reach Me">   <span class="nav-icon">📬</span> <span class="nav-label">reach</span> </a>
+  <!-- ========== TOP NAV ========== -->
+  <nav class="top-nav" id="topNav">
+    <a href="index.html" class="brand">DT</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="reach.html">Reach Me</a></li>
+    </ul>
   </nav>
 
-  <div class="container">
+  <!-- ========== SIDE NAV ========== -->
+  <nav class="side-nav" id="sideNav">
+    <a href="index.html" class="side-link" title="Home"><span class="nav-icon">🏠</span><span class="nav-label">home</span></a>
+    <a href="about.html" class="side-link" title="About"><span class="nav-icon">👤</span><span class="nav-label">about</span></a>
+    <a href="projects.html" class="side-link" title="Projects"><span class="nav-icon">⚡</span><span class="nav-label">work</span></a>
+    <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-icon">📬</span><span class="nav-label">reach</span></a>
+  </nav>
 
-    <!-- ========== WHO I AM ========== -->
-    <section id="who">
-      <div class="hero">
-        <div class="hero-avatar">
-          <div class="avatar-img">
-            <img src="avatar.jpg" alt="Dorothy Tepace" />
+  <!-- ========== MAIN ========== -->
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero-home">
+      <div class="hero-avatar">
+        <div class="avatar-ring">
+          <img src="avatar.jpg" alt="Dorothy Tepace" />
+        </div>
+      </div>
+      <div class="hero-text">
+        <h1>Dorothy Tepace</h1>
+
+        <!-- Typing animation -->
+        <div class="typing-wrap">
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+
+        <p class="hero-intro">
+          Building warm, human-centered web experiences that help the 
+          communities I'm part of — from Cebu, Philippines.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEASER CARDS -->
+    <section class="teaser-grid">
+
+      <div class="teaser-card">
+        <h3>🌷 Who I Am</h3>
+        <p>
+          A curious builder, a lifelong learner, and someone who cares deeply 
+          about the people she builds for.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+          <a href="about.html">More about me →</a>
+        </p>
+      </div>
+
+      <div class="teaser-card">
+        <h3>⚡ What I Do</h3>
+        <p>
+          Currently building a full-stack church app, designing a student 
+          wellness platform, and leading design for a 2026 convention.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+          <a href="projects.html">View all projects →</a>
+        </p>
+      </div>
+
+    </section>
+
+    <!-- CTA BUTTONS -->
+    <section class="cta-row">
+      <a href="projects.html" class="btn btn-primary">See my work →</a>
+      <a href="reach.html" class="btn btn-secondary">Get in touch</a>
+    </section>
+
+    <!-- ========== BEYOND CODE GALLERY ========== -->
+    <section class="beyond-code">
+      <header class="beyond-header">
+        <h2>Beyond Code</h2>
+        <p class="beyond-subtitle">The communities, causes, and creativity that keep me grounded.</p>
+      </header>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-tile" data-caption="With my church org — where I build, serve, and grow.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #D9A5A0, #C08880);">
+            <span>📸</span>
+            <p>Church Community</p>
           </div>
         </div>
-        <div class="hero-text">
-          <h1>Dorothy Tepace</h1>
-          <div class="tagline">✨ creative · responsive · ambitious</div>
-          <p style="font-size: 1.2rem; margin-top: 0.5rem;">
-            I design and build playful digital experiences that make people smile.
-          </p>
-          <div class="fun-fact">
-            <i class="fas fa-star"></i>
-            <span><strong>fun fact:</strong> I'm secretly building a mobile + web app for our church org — a surprise for our president!</span>
+
+        <div class="gallery-tile" data-caption="Figma mockups and design experiments in progress.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #A8B89C, #8CA37A);">
+            <span>🎨</span>
+            <p>Design Work</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ========== WHAT I DO ========== -->
-    <section id="what">
-      <h2>⚡ what i do</h2>
-      <div class="projects-grid">
-
-        <!-- FEATURED: CSN de Cebu Web -->
-        <div class="project-card featured">
-          <div class="project-icon">⛪</div>
-          <div class="project-meta">FEATURED · FULL-STACK · IN PROGRESS</div>
-          <h3>CSN de Cebu Web</h3>
-          <p>
-            A full-stack management platform for a multi-chapter religious organization at the 
-            Basilica Minore del Santo Niño de Cebu. Handles member registration &amp; login, 
-            announcements, member directory, event management (Sinulog, meetings), attendance 
-            tracking, payment history, and a Data Privacy Act-compliant consent flow — with 
-            role-based dashboards that route admins and members automatically.
-          </p>
-          <span class="project-tag">Next.js · TypeScript · Tailwind · Supabase</span>
+        <div class="gallery-tile" data-caption="Design lead for the 1st Archdiocesan Convention 2026.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #5C1F2B, #8B3A4A);">
+            <span>🏆</span>
+            <p>Convention 2026</p>
+          </div>
         </div>
 
-        <!-- PROJECT 2: Archdiocesan Convention -->
-        <div class="project-card">
-          <div class="project-icon">🎪</div>
-          <div class="project-meta">DESIGN LEAD · PRODUCTION TEAM · OCT 2026</div>
-          <h3>archdiocesan convention 2026</h3>
-          <p>
-            Serving on the production team for the <strong>1st Archdiocesan Convention 
-            of CSN de Cebu</strong> — a gathering of all registered chapters across the 
-            Philippines, happening October 2026 at Cebu Business Hotel. As design lead, 
-            dance lead, and registration team member, I'm creating posters, the stage 
-            backdrop, program booklet, event shirts, and presentation slides in Canva.
-          </p>
-          <span class="project-tag">Design Lead · Canva · Event</span>
+        <div class="gallery-tile" data-caption="Serving the community — one small act at a time.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #F4C9A8, #E0A87E);">
+            <span>🌱</span>
+            <p>Outreach & Service</p>
+          </div>
         </div>
 
-        <!-- PROJECT 3: placeholder -->
-        <div class="project-card">
-          <div class="project-icon">🎨</div>
-          <h3>design experiments</h3>
-          <p>A growing visual sketchbook of color, typography, and layout challenges — small creative exercises to sharpen my eye for UI and branding.</p>
-          <span class="project-tag">Figma · Canva</span>
+        <div class="gallery-tile" data-caption="My desk setup — where the ideas happen.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #E8DFCF, #D1C4A8);">
+            <span>☕</span>
+            <p>Workspace</p>
+          </div>
+        </div>
+
+        <div class="gallery-tile" data-caption="Presenting MindCheck — our student wellness project.">
+          <div class="tile-placeholder" style="background: linear-gradient(135deg, #B8A9C9, #9B87B4);">
+            <span>🎤</span>
+            <p>Presentations</p>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ========== HOW I WORK ========== -->
-    <section id="how">
-      <h2>🛠️ how i work</h2>
-      <div class="workflow-wrap">
-        <div class="tool-box">
-          <h3><i class="fas fa-wrench" style="color: #7c6aff;"></i> fave tools</h3>
-          <ul class="tool-list">
-            <li>VS Code</li>
-            <li>Next.js</li>
-            <li>TypeScript</li>
-            <li>Supabase</li>
-            <li>Figma</li>
-            <li>Canva</li>
-            <li>GitHub</li>
-            <li>Tailwind</li>
-          </ul>
-          <p style="margin-top: 1.2rem; font-size: 0.95rem;">+ always exploring new tools 🧪</p>
-        </div>
-        <div class="workflow-steps">
-          <div class="step"><div class="step-num">1</div><div><strong>sketch &amp; dream</strong> — pen and paper first, always.</div></div>
-          <div class="step"><div class="step-num">2</div><div><strong>prototype fast</strong> — code small, test with friends.</div></div>
-          <div class="step"><div class="step-num">3</div><div><strong>polish &amp; animate</strong> — micro-interactions make it memorable.</div></div>
-          <div class="step"><div class="step-num">4</div><div><strong>ship &amp; share</strong> — GitHub Pages is my best friend.</div></div>
-        </div>
-      </div>
-    </section>
+  </main>
 
-    <!-- ========== REACH ME ========== -->
-    <section id="reach">
-      <h2>📬 reach me</h2>
-      <div class="contact-flex">
-        <div class="contact-links">
-          <a href="https://github.com/wadtpc" target="_blank" class="contact-item">
-            <i class="fab fa-github"></i> @wadtpc
-          </a>
-          <a href="mailto:wa.dorothytepace@gmail.com" class="contact-item">
-            <i class="fas fa-envelope"></i> wa.dorothytepace@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/dorothy-isabel-tepace" target="_blank" class="contact-item">
-            <i class="fab fa-linkedin"></i> Dorothy Isabel Tepace
-          </a>
-        </div>
-        <div class="qr-placeholder" title="QR code placeholder">
-          <span style="background: white; padding: 4px 8px; border-radius: 6px; color: black;">QR</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== PITCH ========== -->
-    <div class="pitch">
-      <div class="pitch-text">
-        <i class="fas fa-quote-left" style="color: #7c6aff; margin-right: 6px;"></i>
-        I wanted my site to feel <strong>creative, responsive, and ambitious</strong> — like a colorful sketchbook that actually works on any screen. My favorite part is the <strong>hoverable project cards</strong> because they come alive when you explore them.
-      </div>
-      <div style="font-size: 0.9rem; color: #5e5e7a;">© Dorothy Tepace · 2025</div>
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-
   </div>
 
-  <!-- ========== ACTIVE SECTION HIGHLIGHT ========== -->
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    © Dorothy Tepace · 2026
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    const sections = document.querySelectorAll('section[id]');
-    const links = document.querySelectorAll('.side-link');
+    /* NAV SWAP */
+    const topNav = document.getElementById('topNav');
+    const sideNav = document.getElementById('sideNav');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.side-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 200) {
+        topNav.classList.add('hidden');
+        sideNav.classList.add('visible');
+      } else {
+        topNav.classList.remove('hidden');
+        sideNav.classList.remove('visible');
+      }
+    });
+
+    /* TYPING ANIMATION */
+    const typingText = document.getElementById('typingText');
+    const roles = [
+      'front-end developer',
+      'UI/UX designer',
+      'creative designer',
+      'freelancer'
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeLoop() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        speed = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 400;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+
+    typeLoop();
+
+    /* GALLERY LIGHTBOX */
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-tile').forEach(tile => {
+      tile.addEventListener('click', () => {
+        const caption = tile.dataset.caption || '';
+        const imgEl = tile.querySelector('img');
+        const placeholder = tile.querySelector('.tile-placeholder');
+
+        if (imgEl) {
+          lightboxContent.innerHTML = `<img src="${imgEl.src}" alt="${caption}" />`;
+        } else if (placeholder) {
+          const bg = placeholder.style.background;
+          const icon = placeholder.querySelector('span')?.textContent || '📷';
+          const label = placeholder.querySelector('p')?.textContent || '';
+          lightboxContent.innerHTML = `
+            <div class="lightbox-placeholder" style="background: ${bg};">
+              <span class="lightbox-emoji">${icon}</span>
+              <p>${label}</p>
+              <small>Photo coming soon</small>
+            </div>
+          `;
         }
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
       });
-    }, { threshold: 0.5 });
+    });
 
-    sections.forEach(s => observer.observe(s));
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
+
 </body>
 </html>
