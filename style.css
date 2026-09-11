@@ -144,54 +144,36 @@ a:hover { color: var(--rose-dark); }
 .nav-links a.active { color: var(--burgundy); font-weight: 600; }
 
 /* ============================================================
-   SIDE NAVIGATION
+   SIDE NAV — Text labels + active state (override)
    ============================================================ */
 .side-nav {
-  position: fixed;
-  top: 50%;
-  left: 1.2rem;
-  transform: translateY(-50%) translateX(-120%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  z-index: 99;
-  padding: 1rem 0.7rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 60px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(217, 165, 160, 0.4);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
+  padding: 0.8rem 0.6rem;
 }
-
-.side-nav.visible { transform: translateY(-50%) translateX(0); opacity: 1; }
 
 .side-link {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 40px;
-  color: var(--burgundy);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  transition: all 0.2s ease;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
 }
-
-.side-link .nav-icon { font-size: 1.3rem; line-height: 1; }
 
 .side-link .nav-label {
-  opacity: 0; max-width: 0; overflow: hidden;
-  transition: all 0.25s ease;
+  opacity: 1;
+  max-width: none;
+  overflow: visible;
+  font-weight: 500;
 }
 
-.side-link:hover { background: var(--rose); transform: translateX(3px); }
-.side-link:hover .nav-label { opacity: 1; max-width: 80px; }
+.side-link:hover {
+  background: var(--rose);
+  transform: translateX(4px);
+}
 
-.side-link.active { background: var(--burgundy); color: white; }
+.side-link.active {
+  background: var(--burgundy);
+  color: var(--ivory);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(92, 31, 43, 0.25);
+}
 
 /* ============================================================
    PAGE CONTAINER
