@@ -960,6 +960,7 @@ a:hover { color: var(--rose-dark); }
 
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 
+/* ---------- TILE BASE ---------- */
 .gallery-tile {
   aspect-ratio: 4 / 3;
   border-radius: 1.25rem;
@@ -971,10 +972,64 @@ a:hover { color: var(--rose-dark); }
   border: 2px solid transparent;
 }
 
-.gallery-tile:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--rose); }
-.gallery-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-.gallery-tile:hover img { transform: scale(1.06); }
+.gallery-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rose);
+}
 
+/* Photo — blurred + darkened by default */
+.gallery-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: blur(4px) brightness(0.6);
+  transform: scale(1.08);
+  transition: filter 0.4s ease, transform 0.5s ease;
+}
+
+/* On hover — photo sharpens and brightens */
+.gallery-tile:hover img {
+  filter: blur(0) brightness(1);
+  transform: scale(1.06);
+}
+
+/* ---------- TITLE OVERLAY ---------- */
+.tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 1rem;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.tile-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ivory);
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+  background: rgba(92, 31, 43, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.7rem 1.3rem;
+  border-radius: 40px;
+  border: 1px solid rgba(251, 246, 238, 0.2);
+  transition: all 0.35s ease;
+}
+
+/* On hover — fade the title away to reveal the sharp photo */
+.gallery-tile:hover .tile-overlay { opacity: 0; }
+
+/* ---------- TILE PLACEHOLDER (fallback if no photo) ---------- */
 .tile-placeholder {
   width: 100%; height: 100%;
   display: flex;
@@ -992,6 +1047,7 @@ a:hover { color: var(--rose-dark); }
 .tile-placeholder span { font-size: 2.8rem; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15)); }
 .tile-placeholder p { color: var(--ivory); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.03em; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
 
+/* ---------- "Click to view" hint ---------- */
 .gallery-tile::after {
   content: "🔍 Click to view";
   position: absolute;
@@ -1006,11 +1062,12 @@ a:hover { color: var(--rose-dark); }
   transform: translateY(100%);
   transition: all 0.3s ease;
   text-align: center;
+  z-index: 3;
 }
 
 .gallery-tile:hover::after { opacity: 1; transform: translateY(0); }
 
-/* "+N more" badge */
+/* ---------- "+N more" badge ---------- */
 .gallery-tile[data-gallery]::before {
   content: attr(data-count);
   position: absolute;
@@ -1024,7 +1081,7 @@ a:hover { color: var(--rose-dark); }
   letter-spacing: 0.04em;
   padding: 0.3rem 0.7rem;
   border-radius: 30px;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -1050,10 +1107,7 @@ a:hover { color: var(--rose-dark); }
   transition: opacity 0.3s ease;
 }
 
-.lightbox.active {
-  opacity: 1;
-  pointer-events: auto;
-}
+.lightbox.active { opacity: 1; pointer-events: auto; }
 
 .lightbox-inner {
   max-width: 90vw;
@@ -1086,11 +1140,7 @@ a:hover { color: var(--rose-dark); }
   z-index: 2;
 }
 
-.lightbox-close:hover {
-  background: var(--burgundy);
-  color: var(--ivory);
-  transform: rotate(90deg);
-}
+.lightbox-close:hover { background: var(--burgundy); color: var(--ivory); transform: rotate(90deg); }
 
 .lightbox-content {
   border-radius: 1rem;
@@ -1113,14 +1163,19 @@ a:hover { color: var(--rose-dark); }
 .lightbox-caption {
   text-align: center;
   color: var(--ivory);
-  margin-top: 1.2rem;
+  background: transparent;
+  border: none;
+  margin-top: 1rem;
   font-size: 0.95rem;
   font-style: italic;
   max-width: 60ch;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
+  line-height: 1.5;
 }
+
+.lightbox-caption img { display: none; }
 
 .lightbox-nav {
   position: absolute;
@@ -1144,11 +1199,7 @@ a:hover { color: var(--rose-dark); }
   z-index: 3;
 }
 
-.lightbox-nav:hover {
-  background: var(--burgundy);
-  color: var(--ivory);
-  transform: translateY(-50%) scale(1.08);
-}
+.lightbox-nav:hover { background: var(--burgundy); color: var(--ivory); transform: translateY(-50%) scale(1.08); }
 
 .lightbox-prev { left: -70px; }
 .lightbox-next { right: -70px; }
@@ -1181,19 +1232,13 @@ a:hover { color: var(--rose-dark); }
     gap: 0.3rem;
   }
 
-  .side-nav.visible {
-    transform: translateX(-50%) translateY(0) !important;
-  }
+  .side-nav.visible { transform: translateX(-50%) translateY(0) !important; }
 
   .side-link { padding: 0.5rem 0.9rem; font-size: 0.78rem; }
 
   .lightbox-prev { left: 0.8rem; }
   .lightbox-next { right: 0.8rem; }
-  .lightbox-nav {
-    width: 44px;
-    height: 44px;
-    font-size: 1.6rem;
-  }
+  .lightbox-nav { width: 44px; height: 44px; font-size: 1.6rem; }
 }
 
 @media (max-width: 800px) {
@@ -1221,6 +1266,7 @@ a:hover { color: var(--rose-dark); }
   .modal-body { padding: 2rem 1.3rem 1.5rem; }
   .modal-header h2 { font-size: 1.5rem; }
   .typing-wrap { min-width: auto; font-size: 1rem; padding: 0.4rem 1rem; }
+  .tile-title { font-size: 1.1rem; padding: 0.55rem 1rem; }
 }
 
 @media (max-width: 500px) {
