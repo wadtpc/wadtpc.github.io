@@ -110,7 +110,7 @@
         <div class="gallery-tile"
              data-gallery="church"
              data-caption="With my church org — where I build, serve, and grow."
-             data-count="+3 more">
+             data-count="+5 more">
           <img src="images/church/1.jpg" alt="Church community" />
         </div>
 
@@ -118,31 +118,27 @@
              data-gallery="design"
              data-caption="Figma mockups and design experiments in progress."
              data-count="+1 more">
-          <img src="images/design/1.jpg" alt="Design work" />
+          <img src="images/design/1.png" alt="Design work" />
         </div>
 
         <div class="gallery-tile"
              data-gallery="convention"
              data-caption="Design lead for the 1st Archdiocesan Convention 2026."
-             data-count="+1 more">
+             data-count="+4 more">
           <img src="images/convention/1.jpg" alt="Convention 2026" />
         </div>
 
         <div class="gallery-tile"
              data-gallery="outreach"
-             data-caption="Serving the community — one small act at a time.">
+             data-caption="Serving the community — one small act at a time."
+             data-count="+2 more">
           <img src="images/outreach/1.jpg" alt="Outreach and service" />
         </div>
 
         <div class="gallery-tile"
-             data-gallery="workspace"
-             data-caption="My desk setup — where the ideas happen.">
-          <img src="images/workspace/1.jpg" alt="Workspace" />
-        </div>
-
-        <div class="gallery-tile"
              data-gallery="dance"
-             data-caption="Dance lead for our church events — one of my favorite roles.">
+             data-caption="Dance lead for our church events — one of my favorite roles."
+             data-count="+4 more">
           <img src="images/dance/1.jpg" alt="Dance and performance" />
         </div>
 
@@ -255,26 +251,30 @@
     const lightboxPrev = document.getElementById('lightboxPrev');
     const lightboxNext = document.getElementById('lightboxNext');
 
-    // Gallery data — map folder name to array of image paths + captions
+    // Gallery data — matches your actual files
     const galleries = {
       church: {
         images: [
           'images/church/1.jpg',
           'images/church/2.jpg',
           'images/church/3.jpg',
-          'images/church/4.jpg'
+          'images/church/4.jpg',
+          'images/church/5.jpg',
+          'images/church/6.jpg'
         ],
         captions: [
           'With my church org',
           'Community event',
           'Serving together',
-          'Another moment'
+          'Another moment',
+          'Church activity',
+          'One more'
         ]
       },
       design: {
         images: [
-          'images/design/1.jpg',
-          'images/design/2.jpg'
+          'images/design/1.png',
+          'images/design/2.png'
         ],
         captions: [
           'Figma mockup',
@@ -284,35 +284,43 @@
       convention: {
         images: [
           'images/convention/1.jpg',
-          'images/convention/2.jpg'
+          'images/convention/2.png',
+          'images/convention/3.png',
+          'images/convention/4.jpg',
+          'images/convention/5.jpg'
         ],
         captions: [
           'Convention planning',
-          'Team session'
+          'Team session',
+          'Design draft',
+          'Preparing',
+          'Another moment'
         ]
       },
       outreach: {
         images: [
-          'images/outreach/1.jpg'
+          'images/outreach/1.jpg',
+          'images/outreach/2.jpg',
+          'images/outreach/3.jpg'
         ],
         captions: [
-          'Outreach activity'
-        ]
-      },
-      workspace: {
-        images: [
-          'images/workspace/1.jpg'
-        ],
-        captions: [
-          'My desk setup'
+          'Outreach activity',
+          'Serving the community',
+          'Helping out'
         ]
       },
       dance: {
         images: [
-          'images/dance/1.jpg'
+          'images/dance/1.jpg',
+          'images/dance/2.jpg',
+          'images/dance/3.jpg',
+          'images/dance/4.jpg'
         ],
         captions: [
-          'Dance practice'
+          'Dance practice',
+          'Choreography',
+          'Rehearsal',
+          'Performance'
         ]
       }
     };
