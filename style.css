@@ -1215,6 +1215,22 @@ a:hover { color: var(--rose-dark); }
   font-weight: 500;
 }
 
+.modal-screenshots.single {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-screenshots.single img {
+  aspect-ratio: auto;
+  max-height: min(60vh, 500px);
+  max-width: 100%;
+  object-fit: contain;
+  background: var(--ivory);
+  padding: 0.4rem;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
