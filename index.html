@@ -43,7 +43,6 @@
   <!-- ========== MAIN ========== -->
   <main class="page">
 
-    <!-- HERO -->
     <section class="hero-home">
       <div class="hero-avatar">
         <div class="avatar-ring">
@@ -65,7 +64,6 @@
       </div>
     </section>
 
-    <!-- TEASER CARDS -->
     <section class="teaser-grid">
 
       <div class="teaser-card">
@@ -92,13 +90,11 @@
 
     </section>
 
-    <!-- CTA BUTTONS -->
     <section class="cta-row">
       <a href="projects.html" class="btn btn-primary">See my work →</a>
       <a href="reach.html" class="btn btn-secondary">Get in touch</a>
     </section>
 
-    <!-- ========== BEYOND CODE GALLERY ========== -->
     <section class="beyond-code">
       <header class="beyond-header">
         <h2>Beyond Code</h2>
@@ -138,7 +134,7 @@
         <div class="gallery-tile"
              data-gallery="dance"
              data-caption="Dance lead for our church events — one of my favorite roles."
-             data-count="+4 more">
+             data-count="+3 more">
           <img src="images/dance/1.jpg" alt="Dance and performance" />
         </div>
 
@@ -242,7 +238,7 @@
 
     typeLoop();
 
-    /* ========== GALLERY LIGHTBOX WITH MULTI-PHOTOS ========== */
+    /* ========== GALLERY LIGHTBOX WITH SLIDESHOW ========== */
     const lightbox = document.getElementById('lightbox');
     const lightboxContent = document.getElementById('lightboxContent');
     const lightboxCaption = document.getElementById('lightboxCaption');
@@ -251,7 +247,7 @@
     const lightboxPrev = document.getElementById('lightboxPrev');
     const lightboxNext = document.getElementById('lightboxNext');
 
-    // Gallery data — matches your actual files
+    // Gallery data — matches actual photos in each folder
     const galleries = {
       church: {
         images: [
