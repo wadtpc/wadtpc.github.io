@@ -1215,6 +1215,35 @@ a:hover { color: var(--rose-dark); }
   font-weight: 500;
 }
 
+/* ============================================================
+   MODAL SCREENSHOTS
+   ============================================================ */
+.modal-screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.6rem;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.modal-screenshots img {
+  width: 100%;
+  height: 100px;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(217, 165, 160, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: block;
+  object-fit: cover;
+  background: var(--white);
+}
+
+.modal-screenshots img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(92, 31, 43, 0.2);
+  border-color: var(--rose);
+}
+
+/* Single screenshot — full width, contained */
 .modal-screenshots.single {
   grid-template-columns: 1fr;
   max-width: 100%;
@@ -1223,12 +1252,22 @@ a:hover { color: var(--rose-dark); }
 }
 
 .modal-screenshots.single img {
-  aspect-ratio: auto;
+  height: auto;
   max-height: min(60vh, 500px);
   max-width: 100%;
   object-fit: contain;
   background: var(--ivory);
   padding: 0.4rem;
+}
+
+/* On narrow screens, stack vertically */
+@media (max-width: 500px) {
+  .modal-screenshots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .modal-screenshots img {
+    height: 80px;
+  }
 }
 
 /* ============================================================
