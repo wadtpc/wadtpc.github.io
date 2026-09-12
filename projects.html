@@ -43,7 +43,12 @@
         <div class="proj-meta">FEATURED · FULL-STACK · IN PROGRESS</div>
         <h3>CSN de Cebu Web</h3>
         <p>A full-stack management platform for a multi-chapter church organization in Cebu.</p>
-        <div class="proj-tags"><span>Next.js</span><span>TypeScript</span><span>Supabase</span></div>
+        <div class="proj-tags">
+          <span>Next.js 16</span>
+          <span>React 19</span>
+          <span>TypeScript</span>
+          <span>Supabase</span>
+        </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
@@ -51,14 +56,14 @@
         <div class="proj-icon">🧠</div>
         <div class="proj-meta">UI/UX · GROUP PROJECT</div>
         <h3>MindCheck</h3>
-        <p>MindCheck is a student wellness app that bridges mental health and academics by letting students log their mood through emoji check-ins and journal entries, then using AI to analyze emotions and generate personalized study strategies in real time. My role focused on designing and building the UI across all pages of the app. </p>
+        <p>MindCheck is a student wellness app that bridges mental health and academics by letting students log their mood through emoji check-ins and journal entries, then using AI to analyze emotions and generate personalized study strategies in real time. My role focused on designing and building the UI across all pages of the app.</p>
         <div class="proj-tags">
-            <span>UI/UX</span>
-            <span>Android</span>
-            <span>Mood Tracker</span>
-            <span>AI</span>
-            <span>Research</span>
-          </div>
+          <span>UI/UX</span>
+          <span>Android</span>
+          <span>Mood Tracker</span>
+          <span>AI</span>
+          <span>Research</span>
+        </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
@@ -105,7 +110,7 @@
   </footer>
 
   <script>
-      /* ========== NAV SWAP ON SCROLL ========== */
+    /* ========== NAV SWAP ON SCROLL ========== */
     const topNav = document.getElementById('topNav');
     const sideNav = document.getElementById('sideNav');
 
@@ -129,25 +134,48 @@
         meta: 'FEATURED · FULL-STACK · IN PROGRESS',
         title: 'CSN de Cebu Web',
         body: `
-          <p>A full-stack management platform built for a multi-chapter religious 
-          organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>.</p>
-          <h4>What it does</h4>
+          <p>A web-based management system initially for the <strong>mother chapter</strong> of the religious organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>, designed to scale to other chapters in the future.</p>
+
+          <h4>Core Features</h4>
           <ul>
-            <li>Member registration & login</li>
-            <li>Data Privacy Act (RA 10173) consent flow</li>
-            <li>Role-based dashboards (admin vs member)</li>
-            <li>Announcements management</li>
+            <li>Member registration</li>
+            <li>Announcements</li>
             <li>Member directory</li>
-            <li>Chapter auto-assignment based on address</li>
-            <li>Events calendar (in progress)</li>
-            <li>Attendance tracking (planned)</li>
-            <li>Payment history (planned)</li>
+            <li>Event calendar</li>
+            <li>Attendance tracking</li>
+            <li>Payment history</li>
           </ul>
-          <h4>Tech Stack</h4>
+
+          <p>It has three user roles: <strong>Admin</strong>, <strong>Officer</strong>, and <strong>Member</strong>. Admins and officers manage everything; members can view and update their own information, attendance, and payments.</p>
+
+          <h4>Front-End</h4>
           <div class="modal-tags">
-            <span>Next.js 16</span><span>TypeScript</span><span>Tailwind CSS</span>
-            <span>Supabase</span><span>GitHub</span><span>Vercel</span>
+            <span>Next.js 16</span>
+            <span>React 19</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
           </div>
+
+          <h4>Backend / Database</h4>
+          <div class="modal-tags">
+            <span>Supabase</span>
+            <span>Supabase Auth</span>
+            <span>Supabase Storage</span>
+          </div>
+
+          <h4>Tools</h4>
+          <div class="modal-tags">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>VS Code</span>
+            <span>npm</span>
+          </div>
+
+          <h4>Deployment (Planned)</h4>
+          <div class="modal-tags">
+            <span>Vercel</span>
+          </div>
+
           <h4>Highlights</h4>
           <ul>
             <li>Built a legally compliant consent system most student projects skip</li>
