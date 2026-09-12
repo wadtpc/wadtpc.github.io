@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- ========== SPLASH ========== -->
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-stage">
       <div class="splash-dot"></div>
@@ -20,6 +21,7 @@
     </div>
   </div>
 
+  <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -30,6 +32,7 @@
     </ul>
   </nav>
 
+  <!-- ========== SIDE NAV ========== -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link active" title="Home"><span class="nav-label">Home</span></a>
     <a href="about.html" class="side-link" title="About"><span class="nav-label">About</span></a>
@@ -37,8 +40,10 @@
     <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-label">Reach Me</span></a>
   </nav>
 
+  <!-- ========== MAIN ========== -->
   <main class="page">
 
+    <!-- HERO -->
     <section class="hero-home">
       <div class="hero-avatar">
         <div class="avatar-ring">
@@ -60,6 +65,7 @@
       </div>
     </section>
 
+    <!-- TEASER CARDS -->
     <section class="teaser-grid">
 
       <div class="teaser-card">
@@ -86,12 +92,14 @@
 
     </section>
 
+    <!-- CTA BUTTONS -->
     <section class="cta-row">
       <a href="projects.html" class="btn btn-primary">See my work →</a>
       <a href="reach.html" class="btn btn-secondary">Get in touch</a>
     </section>
 
-        <section class="beyond-code">
+    <!-- ========== BEYOND CODE GALLERY ========== -->
+    <section class="beyond-code">
       <header class="beyond-header">
         <h2>Beyond Code</h2>
         <p class="beyond-subtitle">The communities, causes, and creativity that keep me grounded.</p>
@@ -133,15 +141,110 @@
         </div>
 
         <div class="gallery-tile"
-             data-gallery="presentation"
-             data-caption="Presenting MindCheck — our student wellness project.">
-          <img src="images/presentation/1.jpg" alt="Presentations" />
+             data-gallery="dance"
+             data-caption="Dance lead for our church events — one of my favorite roles.">
+          <img src="images/dance/1.jpg" alt="Dance and performance" />
         </div>
 
       </div>
     </section>
 
   </main>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    © Dorothy Tepace · 2026
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    /* ========== SPLASH ON FIRST LOAD ========== */
+    const splashOverlay = document.getElementById('splashOverlay');
+    const splashShown = sessionStorage.getItem('splashShown');
+
+    if (splashShown) {
+      splashOverlay.style.display = 'none';
+    } else {
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        splashOverlay.classList.add('fade-out');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+          splashOverlay.style.display = 'none';
+        }, 700);
+        sessionStorage.setItem('splashShown', 'true');
+      }, 3000);
+    }
+
+    /* ========== NAV SWAP ON SCROLL ========== */
+    const topNav = document.getElementById('topNav');
+    const sideNav = document.getElementById('sideNav');
+
+    function updateNav() {
+      const y = window.scrollY;
+      if (y > 200) {
+        topNav.classList.add('hidden');
+        sideNav.classList.add('visible');
+      } else {
+        topNav.classList.remove('hidden');
+        sideNav.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateNav);
+    window.addEventListener('load', updateNav);
+
+    /* ========== TYPING ANIMATION ========== */
+    const typingText = document.getElementById('typingText');
+    const roles = [
+      'front-end developer',
+      'UI/UX designer',
+      'creative designer',
+      'freelancer'
+    ];
+
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeLoop() {
+      const currentRole = roles[roleIndex];
+
+      if (isDeleting) {
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        speed = 1800;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 400;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+
+    typeLoop();
 
     /* ========== GALLERY LIGHTBOX WITH MULTI-PHOTOS ========== */
     const lightbox = document.getElementById('lightbox');
@@ -204,12 +307,12 @@
           'My desk setup'
         ]
       },
-      presentation: {
+      dance: {
         images: [
-          'images/presentation/1.jpg'
+          'images/dance/1.jpg'
         ],
         captions: [
-          'Presenting MindCheck'
+          'Dance practice'
         ]
       }
     };
@@ -241,7 +344,6 @@
       lightboxCaption.textContent = caption;
       lightboxCounter.textContent = `${currentIndex + 1} of ${currentGallery.length}`;
 
-      // Show/hide nav buttons based on count
       const showNav = currentGallery.length > 1;
       lightboxPrev.style.display = showNav ? 'flex' : 'none';
       lightboxNext.style.display = showNav ? 'flex' : 'none';
@@ -285,129 +387,6 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') nextImage();
       if (e.key === 'ArrowLeft') prevImage();
-    });
-
-  <footer class="site-footer">
-    © Dorothy Tepace · 2026
-  </footer>
-
-  <script>
-    const splashOverlay = document.getElementById('splashOverlay');
-    const splashShown = sessionStorage.getItem('splashShown');
-
-    if (splashShown) {
-      splashOverlay.style.display = 'none';
-    } else {
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        splashOverlay.classList.add('fade-out');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          splashOverlay.style.display = 'none';
-        }, 700);
-        sessionStorage.setItem('splashShown', 'true');
-      }, 3000);
-    }
-
-    /* ========== NAV SWAP ON SCROLL ========== */
-    const topNav = document.getElementById('topNav');
-    const sideNav = document.getElementById('sideNav');
-
-    function updateNav() {
-      const y = window.scrollY;
-      if (y > 200) {
-        topNav.classList.add('hidden');
-        sideNav.classList.add('visible');
-      } else {
-        topNav.classList.remove('hidden');
-        sideNav.classList.remove('visible');
-      }
-    }
-
-    window.addEventListener('scroll', updateNav);
-    window.addEventListener('load', updateNav);
-
-    const typingText = document.getElementById('typingText');
-    const roles = [
-      'front-end developer',
-      'UI/UX designer',
-      'creative designer',
-      'freelancer'
-    ];
-
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeLoop() {
-      const currentRole = roles[roleIndex];
-
-      if (isDeleting) {
-        typingText.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingText.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let speed = isDeleting ? 40 : 80;
-
-      if (!isDeleting && charIndex === currentRole.length) {
-        speed = 1800;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        speed = 400;
-      }
-
-      setTimeout(typeLoop, speed);
-    }
-
-    typeLoop();
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxContent = document.getElementById('lightboxContent');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-
-    document.querySelectorAll('.gallery-tile').forEach(tile => {
-      tile.addEventListener('click', () => {
-        const caption = tile.dataset.caption || '';
-        const imgEl = tile.querySelector('img');
-        const placeholder = tile.querySelector('.tile-placeholder');
-
-        if (imgEl) {
-          lightboxContent.innerHTML = `<img src="${imgEl.src}" alt="${caption}" />`;
-        } else if (placeholder) {
-          const bg = placeholder.style.background;
-          const icon = placeholder.querySelector('span')?.textContent || '📷';
-          const label = placeholder.querySelector('p')?.textContent || '';
-          lightboxContent.innerHTML = `
-            <div class="lightbox-placeholder" style="background: ${bg};">
-              <span class="lightbox-emoji">${icon}</span>
-              <p>${label}</p>
-              <small>Photo coming soon</small>
-            </div>
-          `;
-        }
-        lightboxCaption.textContent = caption;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 
