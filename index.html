@@ -75,8 +75,10 @@
          ============================================================ -->
         <section class="gallery-grid">
 
+          <section class="gallery-grid">
+
       <!-- 01. Church Community -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="church">
+      <div class="gallery-tile slideshow reveal" data-project="church" data-gallery-title="Church Community">
         <div class="tile-slideshow" data-images='[
           "images/church/1.jpg",
           "images/church/2.jpg",
@@ -94,10 +96,10 @@
             <span>Community</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 02. Archdiocesan Convention -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="convention">
+      <div class="gallery-tile slideshow reveal" data-project="convention" data-gallery-title="Archdiocesan Convention 2026">
         <div class="tile-slideshow" data-images='[
           "images/convention/1.jpg",
           "images/convention/2.png",
@@ -114,10 +116,10 @@
             <span>Leadership</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 03. Dance & Performance -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="dance">
+      <div class="gallery-tile slideshow reveal" data-project="dance" data-gallery-title="Dance &amp; Performance">
         <div class="tile-slideshow" data-images='[
           "images/dance/1.jpg",
           "images/dance/2.jpg",
@@ -134,10 +136,10 @@
             <span>Performance</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 04. Design Work -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="design">
+      <div class="gallery-tile slideshow reveal" data-project="design" data-gallery-title="Design Work">
         <div class="tile-slideshow" data-images='[
           "images/design/1.png",
           "images/design/2.png"
@@ -151,10 +153,10 @@
             <span>Branding</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 05. MindCheck -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="mindcheck">
+      <div class="gallery-tile slideshow reveal" data-project="mindcheck" data-gallery-title="MindCheck Student Wellness">
         <div class="tile-slideshow" data-images='[
           "images/mindcheck/1.png"
         ]'></div>
@@ -167,10 +169,10 @@
             <span>Gemini API</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 06. Outreach & Service -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="outreach">
+      <div class="gallery-tile slideshow reveal" data-project="outreach" data-gallery-title="Outreach &amp; Service">
         <div class="tile-slideshow" data-images='[
           "images/outreach/1.jpg",
           "images/outreach/2.png",
@@ -185,10 +187,10 @@
             <span>Outreach</span>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 07. VC Cafe Booking -->
-      <a href="projects.html" class="gallery-tile slideshow reveal" data-project="vccafe">
+      <div class="gallery-tile slideshow reveal" data-project="vccafe" data-gallery-title="VC Cafe Booking System">
         <div class="tile-slideshow" data-images='[
           "images/vccafe/1.png",
           "images/vccafe/2.png",
@@ -211,10 +213,54 @@
             <span>MySQL</span>
           </div>
         </div>
-      </a>
+      </div>
 
+
+        <!-- ============================================================
+         STATEMENT QUOTE
+         ============================================================ -->
+    <section class="home-statement reveal">
+      <div class="statement-divider">
+        <span>✦</span>
+      </div>
+
+      <blockquote class="statement-quote">
+        <p>
+          Building warm, human-centered digital experiences
+          <span class="statement-accent">for the people I care about.</span>
+        </p>
+        <footer class="statement-attribution">
+          <span class="statement-line"></span>
+          <cite>Dorothy Tepace · 2026</cite>
+        </footer>
+      </blockquote>
+
+      <div class="statement-divider">
+        <span>✦</span>
+      </div>
+    </section>  
     </section>
+      <!-- ============================================
+       GALLERY LIGHTBOX
+       ============================================ -->
+  <div class="gallery-lightbox" id="galleryLightbox">
+    <button class="gallery-lb-close" id="galleryLbClose" aria-label="Close">✕</button>
+    <button class="gallery-lb-nav gallery-lb-prev" id="galleryLbPrev" aria-label="Previous">‹</button>
+    <button class="gallery-lb-nav gallery-lb-next" id="galleryLbNext" aria-label="Next">›</button>
 
+    <div class="gallery-lb-inner">
+      <div class="gallery-lb-header">
+        <h3 id="galleryLbTitle">Gallery</h3>
+        <p id="galleryLbCounter">1 / 1</p>
+      </div>
+
+      <div class="gallery-lb-content">
+        <img id="galleryLbImage" src="" alt="" />
+      </div>
+
+      <div class="gallery-lb-thumbs" id="galleryLbThumbs"></div>
+    </div>
+  </div>
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -369,6 +415,123 @@
           currentIndex = (currentIndex + 1) % imgElements.length;
           imgElements[currentIndex].classList.add('active');
         }, 3000);
+      });
+    })();
+
+        /* ========== GALLERY LIGHTBOX ========== */
+    (function () {
+      const lightbox = document.getElementById('galleryLightbox');
+      const lbImage = document.getElementById('galleryLbImage');
+      const lbTitle = document.getElementById('galleryLbTitle');
+      const lbCounter = document.getElementById('galleryLbCounter');
+      const lbThumbs = document.getElementById('galleryLbThumbs');
+      const lbClose = document.getElementById('galleryLbClose');
+      const lbPrev = document.getElementById('galleryLbPrev');
+      const lbNext = document.getElementById('galleryLbNext');
+
+      if (!lightbox) return;
+
+      let currentImages = [];
+      let currentIndex = 0;
+
+      function openLightbox(images, title) {
+        currentImages = images;
+        currentIndex = 0;
+
+        lbTitle.textContent = title || 'Gallery';
+        lbThumbs.innerHTML = '';
+
+        // Build thumbnails
+        images.forEach((src, i) => {
+          const thumb = document.createElement('div');
+          thumb.className = 'gallery-lb-thumb' + (i === 0 ? ' active' : '');
+          thumb.innerHTML = `<img src="${src}" alt="" />`;
+          thumb.addEventListener('click', () => {
+            currentIndex = i;
+            renderLightbox();
+          });
+          lbThumbs.appendChild(thumb);
+        });
+
+        // Hide nav buttons if only 1 image
+        if (images.length <= 1) {
+          lightbox.classList.add('single-image');
+        } else {
+          lightbox.classList.remove('single-image');
+        }
+
+        renderLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function renderLightbox() {
+        const src = currentImages[currentIndex];
+        lbImage.src = src;
+        lbImage.alt = '';
+        lbCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+        // Update thumbnails active state
+        const thumbs = lbThumbs.querySelectorAll('.gallery-lb-thumb');
+        thumbs.forEach((t, i) => {
+          t.classList.toggle('active', i === currentIndex);
+        });
+
+        // Trigger re-fade animation
+        lbImage.style.animation = 'none';
+        void lbImage.offsetWidth;
+        lbImage.style.animation = '';
+      }
+
+      function nextImage() {
+        if (currentImages.length <= 1) return;
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        renderLightbox();
+      }
+
+      function prevImage() {
+        if (currentImages.length <= 1) return;
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        renderLightbox();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Attach click to each slideshow tile
+      document.querySelectorAll('.gallery-tile.slideshow').forEach((tile) => {
+        tile.addEventListener('click', () => {
+          const slideshow = tile.querySelector('.tile-slideshow');
+          if (!slideshow) return;
+
+          let images = [];
+          try {
+            images = JSON.parse(slideshow.dataset.images || '[]');
+          } catch (e) { return; }
+
+          const title = tile.dataset.galleryTitle || 'Gallery';
+          if (images.length > 0) {
+            openLightbox(images, title);
+          }
+        });
+      });
+
+      // Controls
+      lbClose.addEventListener('click', closeLightbox);
+      lbPrev.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+      lbNext.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
       });
     })();
   </script>
