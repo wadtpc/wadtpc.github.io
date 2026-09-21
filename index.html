@@ -4,15 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dorothy Tepace · Portfolio 2026</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== SPLASH ========== -->
+  <!-- ============================================================
+       SPLASH SCREEN
+       ============================================================ -->
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-stage">
       <div class="splash-dot"></div>
@@ -21,7 +29,10 @@
     </div>
   </div>
 
-  <!-- ========== TOP NAV ========== -->
+
+  <!-- ============================================================
+       TOP NAVIGATION
+       ============================================================ -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -32,7 +43,10 @@
     </ul>
   </nav>
 
-  <!-- ========== SIDE NAV ========== -->
+
+  <!-- ============================================================
+       SIDE NAVIGATION
+       ============================================================ -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link active" title="Home"><span class="nav-label">Home</span></a>
     <a href="about.html" class="side-link" title="About"><span class="nav-label">About</span></a>
@@ -40,17 +54,18 @@
     <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-label">Reach Me</span></a>
   </nav>
 
-  <!-- ========== MAIN ========== -->
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
   <main class="page">
 
-    <!-- ============================================================
-         SMALL EDITORIAL HEADER
-         ============================================================ -->
+    <!-- ---------- HOME HEADER ---------- -->
     <header class="home-header reveal">
       <div class="home-header-left">
         <h1>Dorothy<br /><span class="accent">Tepace</span></h1>
         <p class="role">
-          Front-end developer & UI/UX designer building warm, human-centered experiences for communities I care about.
+          Front-end developer &amp; UI/UX designer building warm, human-centered experiences for communities I care about.
         </p>
         <div class="hero-typing">
           <span class="typing-text" id="typingText"></span>
@@ -70,12 +85,9 @@
       </div>
     </header>
 
-    <!-- ============================================================
-         GALLERY GRID — 5 PROJECTS
-         ============================================================ -->
-        <section class="gallery-grid">
 
-          <section class="gallery-grid">
+    <!-- ---------- GALLERY GRID ---------- -->
+    <section class="gallery-grid">
 
       <!-- 01. Church Community -->
       <div class="gallery-tile slideshow reveal" data-project="church" data-gallery-title="Church Community">
@@ -215,10 +227,10 @@
         </div>
       </div>
 
+    </section>
 
-        <!-- ============================================================
-         STATEMENT QUOTE
-         ============================================================ -->
+
+    <!-- ---------- CLOSING STATEMENT QUOTE ---------- -->
     <section class="home-statement reveal">
       <div class="statement-divider">
         <span>✦</span>
@@ -238,11 +250,14 @@
       <div class="statement-divider">
         <span>✦</span>
       </div>
-    </section>  
     </section>
-      <!-- ============================================
-       GALLERY LIGHTBOX
-       ============================================ -->
+
+  </main>
+
+
+  <!-- ============================================================
+       GALLERY LIGHTBOX (fixed overlay)
+       ============================================================ -->
   <div class="gallery-lightbox" id="galleryLightbox">
     <button class="gallery-lb-close" id="galleryLbClose" aria-label="Close">✕</button>
     <button class="gallery-lb-nav gallery-lb-prev" id="galleryLbPrev" aria-label="Previous">‹</button>
@@ -261,16 +276,24 @@
       <div class="gallery-lb-thumbs" id="galleryLbThumbs"></div>
     </div>
   </div>
-  </main>
 
-  <!-- ========== FOOTER ========== -->
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
   <footer class="site-footer">
     © Dorothy Tepace · 2026
   </footer>
 
-  <!-- ========== SCRIPTS ========== -->
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
   <script>
-    /* ========== SPLASH ON FIRST LOAD ========== */
+
+    /* ============================================================
+       1. SPLASH — shows once per session
+       ============================================================ */
     (function () {
       const splashOverlay = document.getElementById('splashOverlay');
       if (!splashOverlay) return;
@@ -292,7 +315,10 @@
       }
     })();
 
-    /* ========== NAV SWAP ON SCROLL ========== */
+
+    /* ============================================================
+       2. NAV SWAP — top nav hides, side nav appears on scroll
+       ============================================================ */
     (function () {
       const topNav = document.getElementById('topNav');
       const sideNav = document.getElementById('sideNav');
@@ -313,7 +339,10 @@
       window.addEventListener('load', updateNav);
     })();
 
-    /* ========== TYPING ANIMATION ========== */
+
+    /* ============================================================
+       3. TYPING ANIMATION — cycles through roles
+       ============================================================ */
     (function () {
       const typingText = document.getElementById('typingText');
       if (!typingText) return;
@@ -357,7 +386,10 @@
       typeLoop();
     })();
 
-    /* ========== SCROLL REVEAL ========== */
+
+    /* ============================================================
+       4. SCROLL REVEAL — fade elements in as you scroll
+       ============================================================ */
     (function () {
       const reveals = document.querySelectorAll('.reveal');
       if (!reveals.length) return;
@@ -376,13 +408,15 @@
       reveals.forEach(el => observer.observe(el));
     })();
 
-        /* ========== AUTO-PLAYING TILE SLIDESHOWS ========== */
+
+    /* ============================================================
+       5. AUTO-PLAYING TILE SLIDESHOWS
+       ============================================================ */
     (function () {
       const slideshows = document.querySelectorAll('.tile-slideshow');
       if (!slideshows.length) return;
 
       slideshows.forEach((container) => {
-        // Read image list from data-images attribute
         let images = [];
         try {
           images = JSON.parse(container.dataset.images || '[]');
@@ -418,7 +452,10 @@
       });
     })();
 
-        /* ========== GALLERY LIGHTBOX ========== */
+
+    /* ============================================================
+       6. GALLERY LIGHTBOX — opens on tile click
+       ============================================================ */
     (function () {
       const lightbox = document.getElementById('galleryLightbox');
       const lbImage = document.getElementById('galleryLbImage');
@@ -534,6 +571,7 @@
         if (e.key === 'ArrowLeft') prevImage();
       });
     })();
+
   </script>
 
 </body>
