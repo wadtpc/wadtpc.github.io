@@ -288,23 +288,24 @@ body.dark-page .page-header .page-subtitle {
    ============================================================ */
 .hero-editorial {
   position: relative;
-  min-height: 82vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem 0 4rem;
+  gap: 2.5rem;
+  padding: 4rem 0 6rem;
   overflow: hidden;
 }
 
+/* The big name */
 .hero-name-giant {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(4rem, 16vw, 16rem);
+  font-size: clamp(4rem, 14vw, 13rem);
   line-height: 0.88;
   letter-spacing: -0.055em;
   color: var(--burgundy);
-  margin-bottom: 1.5rem;
+  margin: 0;
   font-variation-settings: "opsz" 144, "SOFT" 30;
+  max-width: 80%;
 }
 
 .hero-name-giant .accent {
@@ -312,26 +313,27 @@ body.dark-page .page-header .page-subtitle {
   font-style: italic;
 }
 
+/* Meta row below the name — avatar right, typing left */
 .hero-meta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  gap: 2rem;
+  padding-top: 2.5rem;
   border-top: 1px solid rgba(217, 165, 160, 0.35);
+  margin-top: 0.5rem;
 }
 
 .hero-tagline-block {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .hero-tagline-label {
   font-size: 0.72rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 600;
@@ -342,9 +344,10 @@ body.dark-page .page-header .page-subtitle {
   align-items: baseline;
   gap: 0.15rem;
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--rose-dark);
+  min-height: 2rem;
 }
 
 .typing-text {
@@ -363,6 +366,55 @@ body.dark-page .page-header .page-subtitle {
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* Avatar — right side of meta row */
+.hero-avatar-mini {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--rose), var(--sage));
+  box-shadow: var(--shadow-lg);
+  flex-shrink: 0;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.hero-avatar-mini:hover {
+  transform: scale(1.04) rotate(-3deg);
+}
+
+.hero-avatar-mini img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 4px solid var(--ivory);
+}
+
+/* Scroll cue — centered below */
+.hero-scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.hero-scroll-cue .arrow {
+  display: inline-block;
+  animation: bounce-down 2s ease-in-out infinite;
+  font-size: 1rem;
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .hero-avatar-mini {
