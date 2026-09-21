@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -22,6 +23,7 @@
     </ul>
   </nav>
 
+  <!-- ========== SIDE NAV ========== -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link" title="Home"><span class="nav-label">Home</span></a>
     <a href="about.html" class="side-link" title="About"><span class="nav-label">About</span></a>
@@ -29,100 +31,128 @@
     <a href="reach.html" class="side-link active" title="Reach Me"><span class="nav-label">Reach Me</span></a>
   </nav>
 
+  <!-- ========== MAIN ========== -->
   <main class="page">
 
-    <header class="page-header">
-      <h1>Reach Me</h1>
-      <p class="page-subtitle">Let's build something warm and useful together.</p>
-    </header>
+    <!-- ============================================================
+         REACH HERO
+         ============================================================ -->
+    <section class="reach-hero">
+      <h1 class="reveal">
+        Let's build<br />
+        <span class="italic-line">something warm.</span>
+      </h1>
 
-    <section class="contact-section">
+      <p class="reach-intro reveal">
+        Whether it's a project idea, an internship, or just a hello — my inbox is
+        always open. I love meeting people who care about building things that matter.
+      </p>
+    </section>
 
-      <div class="contact-list">
+    <!-- ============================================================
+         CONTACT EDITORIAL
+         ============================================================ -->
+    <section class="contact-editorial">
 
-        <a href="mailto:wa.dorothytepace@gmail.com" class="contact-row">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-detail">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">wa.dorothytepace@gmail.com</div>
-          </div>
-          <div class="contact-arrow">→</div>
+      <div class="contact-rows">
+
+        <a href="mailto:wa.dorothytepace@gmail.com" class="contact-row reveal">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">wa.dorothytepace@gmail.com</span>
+          <span class="contact-arrow">↗</span>
         </a>
 
-        <a href="https://github.com/wadtpc" target="_blank" class="contact-row">
-          <div class="contact-icon"><i class="fab fa-github"></i></div>
-          <div class="contact-detail">
-            <div class="contact-label">GitHub</div>
-            <div class="contact-value">@wadtpc</div>
-          </div>
-          <div class="contact-arrow">→</div>
+        <a href="https://github.com/wadtpc" target="_blank" rel="noopener" class="contact-row reveal">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">@wadtpc</span>
+          <span class="contact-arrow">↗</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/dorothy-isabel-tepace" target="_blank" class="contact-row">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <div class="contact-detail">
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">Dorothy Isabel Tepace</div>
-          </div>
-          <div class="contact-arrow">→</div>
+        <a href="https://www.linkedin.com/in/dorothy-isabel-tepace" target="_blank" rel="noopener" class="contact-row reveal">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">Dorothy Isabel Tepace</span>
+          <span class="contact-arrow">↗</span>
         </a>
 
-        <a href="https://wadtpc.github.io" target="_blank" class="contact-row">
-          <div class="contact-icon"><i class="fas fa-globe"></i></div>
-          <div class="contact-detail">
-            <div class="contact-label">Portfolio</div>
-            <div class="contact-value">wadtpc.github.io</div>
-          </div>
-          <div class="contact-arrow">→</div>
+        <a href="https://wadtpc.github.io" target="_blank" rel="noopener" class="contact-row reveal">
+          <span class="contact-label">Portfolio</span>
+          <span class="contact-value">wadtpc.github.io</span>
+          <span class="contact-arrow">↗</span>
         </a>
 
       </div>
 
-      <div class="qr-card">
+      <div class="qr-block reveal">
         <div class="qr-label">Scan to visit</div>
         <img
           src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wadtpc.github.io&color=5C1F2B&bgcolor=FBF6EE"
           alt="QR code to Dorothy's portfolio"
-          class="qr-img"
         />
         <div class="qr-caption">wadtpc.github.io</div>
       </div>
 
     </section>
 
-    <section class="closing-message">
+    <!-- ============================================================
+         CLOSING MESSAGE
+         ============================================================ -->
+    <section class="closing-message reveal">
       <div class="closing-icon">🌷</div>
       <h2>Thanks for stopping by.</h2>
       <p>
-        Whether it's a project idea, an internship, or just a hello — my inbox is open.
-        I love meeting people who care about building things that matter.
+        I'm always open to collaborations, conversations, or a coffee chat.
+        Let's make something warm and useful together.
       </p>
     </section>
 
   </main>
 
+  <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     © Dorothy Tepace · 2026
   </footer>
 
+  <!-- ========== SCRIPT ========== -->
   <script>
-      /* ========== NAV SWAP ON SCROLL ========== */
-    const topNav = document.getElementById('topNav');
-    const sideNav = document.getElementById('sideNav');
+    /* ========== NAV SWAP ON SCROLL ========== */
+    (function () {
+      const topNav = document.getElementById('topNav');
+      const sideNav = document.getElementById('sideNav');
+      if (!topNav || !sideNav) return;
 
-    function updateNav() {
-      const y = window.scrollY;
-      if (y > 200) {
-        topNav.classList.add('hidden');
-        sideNav.classList.add('visible');
-      } else {
-        topNav.classList.remove('hidden');
-        sideNav.classList.remove('visible');
+      function updateNav() {
+        const y = window.scrollY;
+        if (y > 200) {
+          topNav.classList.add('hidden');
+          sideNav.classList.add('visible');
+        } else {
+          topNav.classList.remove('hidden');
+          sideNav.classList.remove('visible');
+        }
       }
-    }
 
-    window.addEventListener('scroll', updateNav);
-    window.addEventListener('load', updateNav);
+      window.addEventListener('scroll', updateNav);
+      window.addEventListener('load', updateNav);
+    })();
+
+    /* ========== SCROLL REVEAL ========== */
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('in-view');
+            }, index * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      reveals.forEach(el => observer.observe(el));
+    })();
   </script>
 
 </body>

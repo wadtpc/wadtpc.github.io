@@ -12,6 +12,7 @@
 </head>
 <body>
 
+  <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -22,6 +23,7 @@
     </ul>
   </nav>
 
+  <!-- ========== SIDE NAV ========== -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link" title="Home"><span class="nav-label">Home</span></a>
     <a href="about.html" class="side-link active" title="About"><span class="nav-label">About</span></a>
@@ -29,166 +31,212 @@
     <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-label">Reach Me</span></a>
   </nav>
 
+  <!-- ========== MAIN ========== -->
   <main class="page">
 
+    <!-- ============================================================
+         ABOUT HERO
+         ============================================================ -->
     <header class="page-header">
       <h1>About Me</h1>
       <p class="page-subtitle">A little more than the surface.</p>
     </header>
 
-    <section class="about-bio">
-      <div class="about-avatar">
-        <div class="avatar-ring">
+    <section class="about-hero">
+
+      <div class="about-photo-col reveal">
+        <div class="about-photo">
           <img src="avatar.jpg" alt="Dorothy Tepace" />
         </div>
       </div>
-      <div class="about-bio-text">
-        <h2>Hi, I'm Dorothy 🌷</h2>
-        <p>
-          Aspiring <strong>front-end developer</strong> and <strong>UI/UX designer</strong> 
-          based in Cebu, Philippines, currently building a full-stack church management 
-          platform using Next.js and Supabase. Alongside development, I contribute to 
-          UI/UX design in Figma and serve as part of the production team for the 
-          1st Archdiocesan Convention. My design philosophy centers on warmth, 
+
+      <div class="about-story-col">
+        <h1 class="reveal">Hi, I'm<br /><em>Dorothy</em> 🌷</h1>
+
+        <p class="reveal">
+          Aspiring <strong>front-end developer</strong> and <strong>UI/UX designer</strong>
+          based in Cebu, Philippines, currently building a full-stack church management
+          platform using Next.js and Supabase. Alongside development, I contribute to
+          UI/UX design in Figma and serve as part of the production team for the
+          1st Archdiocesan Convention. My design philosophy centers on warmth,
           usability, and community impact.
         </p>
-        <div class="fun-fact-box">
-          <span class="fun-fact-icon">🌟</span>
-          <div>
-            <strong>Fun fact:</strong> I can't start a project without designing it in my head first — usually at 2 AM.
-          </div>
+
+        <div class="fun-fact-box reveal">
+          <strong>★ Fun fact:</strong> I can't start a project without designing it in my
+          head first — usually at 2 AM.
         </div>
       </div>
+
     </section>
 
-    <section class="skills-section">
+    <!-- ============================================================
+         WHAT I DO — Editorial Skills Grid
+         ============================================================ -->
+    <section class="section-label">
+      <span class="num">01</span>
       <h2>What I Do</h2>
-      <div class="skills-grid">
-
-        <div class="skill-card">
-          <div class="skill-icon">💻</div>
-          <h3>Front-End</h3>
-          <ul class="skill-list">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Next.js</li>
-            <li>Tailwind CSS</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🎨</div>
-          <h3>UI/UX Design</h3>
-          <ul class="skill-list">
-            <li>Figma</li>
-            <li>Wireframing</li>
-            <li>Prototyping</li>
-            <li>Color Theory</li>
-            <li>Typography</li>
-            <li>User Flows</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🔧</div>
-          <h3>Backend & Tools</h3>
-          <ul class="skill-list">
-            <li>Supabase</li>
-            <li>REST APIs</li>
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>Vercel</li>
-            <li>Chrome DevTools</li>
-          </ul>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-icon">🌿</div>
-          <h3>Soft Skills</h3>
-          <ul class="skill-list">
-            <li>Team Leadership</li>
-            <li>Event Coordination</li>
-            <li>Time Management</li>
-            <li>Creative Direction</li>
-          </ul>
-        </div>
-
-      </div>
+      <span class="line"></span>
     </section>
 
-    <section class="how-section">
+    <section class="skills-editorial">
+
+      <div class="skill-block reveal">
+        <span class="skill-num">i.</span>
+        <h3>Front-End</h3>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+
+      <div class="skill-block reveal">
+        <span class="skill-num">ii.</span>
+        <h3>UI/UX Design</h3>
+        <ul>
+          <li>Figma</li>
+          <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Color Theory</li>
+          <li>Typography</li>
+          <li>User Flows</li>
+        </ul>
+      </div>
+
+      <div class="skill-block reveal">
+        <span class="skill-num">iii.</span>
+        <h3>Backend & Tools</h3>
+        <ul>
+          <li>Supabase</li>
+          <li>REST APIs</li>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+          <li>Vercel</li>
+          <li>Chrome DevTools</li>
+        </ul>
+      </div>
+
+      <div class="skill-block reveal">
+        <span class="skill-num">iv.</span>
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Team Leadership</li>
+          <li>Event Coordination</li>
+          <li>Time Management</li>
+          <li>Creative Direction</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         HOW I WORK — Editorial Workflow
+         ============================================================ -->
+    <section class="section-label">
+      <span class="num">02</span>
       <h2>How I Work</h2>
-      <div class="workflow-steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <strong>Sketch & dream</strong>
-            <p>Pen and paper first — always. Ideas flow better when not constrained by a screen.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <strong>Prototype fast</strong>
-            <p>Code small, test with friends. Fast feedback beats perfect first drafts.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <strong>Polish & animate</strong>
-            <p>Micro-interactions make it memorable. Details are what people feel.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-text">
-            <strong>Ship & share</strong>
-            <p>GitHub Pages and Vercel are my best friends. Done is better than perfect.</p>
-          </div>
-        </div>
-      </div>
+      <span class="line"></span>
     </section>
 
-    <section class="learning-section">
-      <h2>Currently Learning 🌱</h2>
-      <div class="learning-tags">
-        <span class="learning-tag">Next.js App Router</span>
-        <span class="learning-tag">TypeScript</span>
-        <span class="learning-tag">Figma Auto-Layout</span>
-        <span class="learning-tag">Git Workflows</span>
-        <span class="learning-tag">REST APIs</span>
-        <span class="learning-tag">UI/UX Principles</span>
+    <section class="workflow-editorial">
+
+      <div class="workflow-step reveal">
+        <div class="step-num">01</div>
+        <h3>Sketch & Dream</h3>
+        <p>Pen and paper first — always. Ideas flow better when not constrained by a screen.</p>
       </div>
+
+      <div class="workflow-step reveal">
+        <div class="step-num">02</div>
+        <h3>Prototype Fast</h3>
+        <p>Code small, test with friends. Fast feedback beats perfect first drafts.</p>
+      </div>
+
+      <div class="workflow-step reveal">
+        <div class="step-num">03</div>
+        <h3>Polish & Animate</h3>
+        <p>Micro-interactions make it memorable. Details are what people feel.</p>
+      </div>
+
+      <div class="workflow-step reveal">
+        <div class="step-num">04</div>
+        <h3>Ship & Share</h3>
+        <p>GitHub Pages and Vercel are my best friends. Done is better than perfect.</p>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         CURRENTLY LEARNING
+         ============================================================ -->
+    <section class="section-label">
+      <span class="num">03</span>
+      <h2>Currently Learning</h2>
+      <span class="line"></span>
+    </section>
+
+    <section class="learning-tags reveal">
+      <span class="learning-tag">Next.js App Router</span>
+      <span class="learning-tag">TypeScript</span>
+      <span class="learning-tag">Figma Auto-Layout</span>
+      <span class="learning-tag">Git Workflows</span>
+      <span class="learning-tag">REST APIs</span>
+      <span class="learning-tag">UI/UX Principles</span>
     </section>
 
   </main>
 
+  <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     © Dorothy Tepace · 2026
   </footer>
 
+  <!-- ========== SCRIPT ========== -->
   <script>
-      /* ========== NAV SWAP ON SCROLL ========== */
-    const topNav = document.getElementById('topNav');
-    const sideNav = document.getElementById('sideNav');
+    /* ========== NAV SWAP ON SCROLL ========== */
+    (function () {
+      const topNav = document.getElementById('topNav');
+      const sideNav = document.getElementById('sideNav');
+      if (!topNav || !sideNav) return;
 
-    function updateNav() {
-      const y = window.scrollY;
-      if (y > 200) {
-        topNav.classList.add('hidden');
-        sideNav.classList.add('visible');
-      } else {
-        topNav.classList.remove('hidden');
-        sideNav.classList.remove('visible');
+      function updateNav() {
+        const y = window.scrollY;
+        if (y > 200) {
+          topNav.classList.add('hidden');
+          sideNav.classList.add('visible');
+        } else {
+          topNav.classList.remove('hidden');
+          sideNav.classList.remove('visible');
+        }
       }
-    }
 
-    window.addEventListener('scroll', updateNav);
-    window.addEventListener('load', updateNav);
+      window.addEventListener('scroll', updateNav);
+      window.addEventListener('load', updateNav);
+    })();
+
+    /* ========== SCROLL REVEAL ========== */
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('in-view');
+            }, index * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      reveals.forEach(el => observer.observe(el));
+    })();
   </script>
 
 </body>

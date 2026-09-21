@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="dark-page">
 
+  <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
     <a href="index.html" class="brand">DT</a>
     <ul class="nav-links">
@@ -22,6 +23,7 @@
     </ul>
   </nav>
 
+  <!-- ========== SIDE NAV ========== -->
   <nav class="side-nav" id="sideNav">
     <a href="index.html" class="side-link" title="Home"><span class="nav-label">Home</span></a>
     <a href="about.html" class="side-link" title="About"><span class="nav-label">About</span></a>
@@ -29,6 +31,7 @@
     <a href="reach.html" class="side-link" title="Reach Me"><span class="nav-label">Reach Me</span></a>
   </nav>
 
+  <!-- ========== MAIN ========== -->
   <main class="page">
 
     <header class="page-header">
@@ -38,60 +41,72 @@
 
     <section class="projects-grid-v2">
 
-      <div class="proj-card" data-project="csn">
+      <div class="proj-card reveal" data-project="csn">
         <div class="proj-icon">⛪</div>
         <div class="proj-meta">FEATURED · FULL-STACK · IN PROGRESS</div>
         <h3>CSN de Cebu Web</h3>
-        <p>A web-based management system initially for the <strong>mother chapter</strong> of the religious organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>, designed to scale to other chapters in the future.</p>
+        <p>A full-stack management platform for a multi-chapter church organization in Cebu.</p>
         <div class="proj-tags">
           <span>Next.js 16</span>
-          <span>Supabase</span>
           <span>TypeScript</span>
-          <span>Tailwind CSS</span>
+          <span>Supabase</span>
+          <span>Tailwind</span>
         </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
-      <div class="proj-card" data-project="mindcheck">
+      <div class="proj-card reveal" data-project="mindcheck">
         <div class="proj-icon">🧠</div>
-        <div class="proj-meta">UI/UX · GROUP PROJECT</div>
+        <div class="proj-meta">ANDROID · AI-POWERED · STUDENT WELLNESS</div>
         <h3>MindCheck</h3>
-        <p>An Android mental wellness app for <strong>students</strong>, turning daily mood check-ins into <strong>AI-powered self-awareness</strong> through journaling, emotion detection, and a personal study coach — designed to grow with the user over time.</p>
+        <p>An Android mental wellness app that turns daily mood check-ins into AI-powered self-awareness and personalized study strategies.</p>
         <div class="proj-tags">
-          <span>UI/UX</span>
           <span>Android</span>
-          <span>Mood Tracker</span>
           <span>AI-Powered</span>
-          <span>Student-Focused</span>
+          <span>UI/UX</span>
+          <span>Gemini API</span>
         </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
-      <div class="proj-card" data-project="vccafe">
+      <div class="proj-card reveal" data-project="vccafe">
         <div class="proj-icon">☕</div>
-        <div class="proj-meta">WEB DEV · GROUP PROJECT</div>
+        <div class="proj-meta">BOOKING SYSTEM · COFFEE SHOP · WEB APP</div>
         <h3>VC Cafe Booking</h3>
-        <p>A web-based online booking system for <strong>VC Cafe, </strong> a mobile coffee and bar business serving events like weddings, birthdays, corporate gatherings, and festivals. The platform allows customers to book the pop-up coffee shop for their special occasions, while admins can manage, accept, or decline reservation requests from anywhere.</p>
-        <div class="proj-tags"><span>Web Dev</span><span>System Design</span><span>UX</span></div>
+        <p>A web-based online booking platform for a pop-up coffee shop — handling reservations, customer info, and admin management.</p>
+        <div class="proj-tags">
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>Web App</span>
+          <span>System Design</span>
+        </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
-      <div class="proj-card" data-project="portfolio">
+      <div class="proj-card reveal" data-project="portfolio">
         <div class="proj-icon">🌐</div>
-        <div class="proj-meta">FRONT-END · PERSONAL · UI/UX</div>
+        <div class="proj-meta">PERSONAL · FRONT-END · UI/UX</div>
         <h3>Developer Portfolio</h3>
-        <p>A personal portfolio website built from scratch with plain HTML, CSS, and 
-          JavaScript — designed to feel <em>me</em>: warm, editorial, and a little playful.</p>  
-        <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <p>This very website — designed and built from scratch with HTML, CSS, and JavaScript. No frameworks, no templates.</p>
+        <div class="proj-tags">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>GitHub Pages</span>
+        </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
-      <div class="proj-card" data-project="convention">
+      <div class="proj-card reveal" data-project="convention">
         <div class="proj-icon">🎪</div>
         <div class="proj-meta">DESIGN LEAD · PRODUCTION · OCT 2026</div>
         <h3>Archdiocesan Convention 2026</h3>
         <p>Design lead and production team member for the 1st Archdiocesan Convention of CSN de Cebu.</p>
-        <div class="proj-tags"><span>Design</span><span>Leadership</span><span>Canva</span></div>
+        <div class="proj-tags">
+          <span>Design</span>
+          <span>Leadership</span>
+          <span>Canva</span>
+        </div>
         <div class="proj-open">Click for details →</div>
       </div>
 
@@ -99,6 +114,7 @@
 
   </main>
 
+  <!-- ========== MODAL ========== -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
@@ -106,355 +122,363 @@
     </div>
   </div>
 
+  <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     © Dorothy Tepace · 2026
   </footer>
 
+  <!-- ========== SCRIPT ========== -->
   <script>
     /* ========== NAV SWAP ON SCROLL ========== */
-    const topNav = document.getElementById('topNav');
-    const sideNav = document.getElementById('sideNav');
+    (function () {
+      const topNav = document.getElementById('topNav');
+      const sideNav = document.getElementById('sideNav');
+      if (!topNav || !sideNav) return;
 
-    function updateNav() {
-      const y = window.scrollY;
-      if (y > 200) {
-        topNav.classList.add('hidden');
-        sideNav.classList.add('visible');
-      } else {
-        topNav.classList.remove('hidden');
-        sideNav.classList.remove('visible');
+      function updateNav() {
+        const y = window.scrollY;
+        if (y > 200) {
+          topNav.classList.add('hidden');
+          sideNav.classList.add('visible');
+        } else {
+          topNav.classList.remove('hidden');
+          sideNav.classList.remove('visible');
+        }
       }
-    }
 
-    window.addEventListener('scroll', updateNav);
-    window.addEventListener('load', updateNav);
+      window.addEventListener('scroll', updateNav);
+      window.addEventListener('load', updateNav);
+    })();
 
-    const projects = {
-      csn: {
-        icon: '⛪',
-        meta: 'FEATURED · FULL-STACK · IN PROGRESS',
-        title: 'CSN de Cebu Web',
-        body: `
-          <p>A web-based management system initially for the <strong>mother chapter</strong> of the religious organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>, designed to scale to other chapters in the future.</p>
+    /* ========== SCROLL REVEAL ========== */
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
 
-          <h4>Core Features</h4>
-          <ul>
-            <li>Member registration</li>
-            <li>Announcements</li>
-            <li>Member directory</li>
-            <li>Event calendar</li>
-            <li>Attendance tracking</li>
-            <li>Payment history</li>
-          </ul>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('in-view');
+            }, index * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
 
-          <p>It has three user roles: <strong>Admin</strong>, <strong>Officer</strong>, and <strong>Member</strong>. Admins and officers manage everything; members can view and update their own information, attendance, and payments.</p>
+      reveals.forEach(el => observer.observe(el));
+    })();
 
-          <h4>Front-End</h4>
-          <div class="modal-tags">
-            <span>Next.js 16</span>
-            <span>React 19</span>
-            <span>TypeScript</span>
-            <span>Tailwind CSS</span>
-          </div>
+    /* ========== PROJECT MODALS ========== */
+    (function () {
+      const overlay = document.getElementById('modalOverlay');
+      if (!overlay) return;
 
-          <h4>Backend / Database</h4>
-          <div class="modal-tags">
-            <span>Supabase</span>
-            <span>Supabase Auth</span>
-            <span>Supabase Storage</span>
-          </div>
+      const modalBody = document.getElementById('modalBody');
+      const modalClose = document.getElementById('modalClose');
+      if (!modalBody || !modalClose) return;
 
-          <h4>Tools</h4>
-          <div class="modal-tags">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>VS Code</span>
-            <span>npm</span>
-          </div>
+      const projects = {
+        csn: {
+          icon: '⛪',
+          meta: 'FEATURED · FULL-STACK · IN PROGRESS',
+          title: 'CSN de Cebu Web',
+          body: `
+            <p>A web-based management system initially for the <strong>mother chapter</strong> of the religious organization at the <strong>Basilica Minore del Santo Niño de Cebu</strong>, designed to scale to other chapters in the future.</p>
 
-          <h4>Deployment (Planned)</h4>
-          <div class="modal-tags">
-            <span>Vercel</span>
-          </div>
+            <h4>Core Features</h4>
+            <ul>
+              <li>Member registration</li>
+              <li>Announcements</li>
+              <li>Member directory</li>
+              <li>Event calendar</li>
+              <li>Attendance tracking</li>
+              <li>Payment history</li>
+            </ul>
 
-          <h4>Highlights</h4>
-          <ul>
-            <li>Role-Based Access Control (RBAC) : Separate dashboards for each roles</li>
-            <li>Built to Scale : Mother Chapter now, designed for all chapters later</li>
-            <li>All-in-One Management System</li>
-          </ul>
-        `
-      },
-      mindcheck: {
-        icon: '🧠',
-        meta: 'ANDROID · AI-POWERED · STUDENT WELLNESS',
-        title: 'MindCheck Student Wellness',
-        body: `
-          <p>An Android mental wellness app for <strong>students</strong>, turning daily mood check-ins into <strong>AI-powered self-awareness</strong> through journaling, emotion detection, and a personal study coach — designed to grow with the user over time.</p>
+            <p>It has three user roles: <strong>Admin</strong>, <strong>Officer</strong>, and <strong>Member</strong>. Admins and officers manage everything; members can view and update their own information, attendance, and payments.</p>
 
-          <h4>Core Features</h4>
-          <ul>
-            <li>Mood check-ins with emoji-based logging</li>
-            <li>Journal entry with AI emotion detection</li>
-            <li>Personalized study strategy generated by Gemini</li>
-            <li>AI Study Coach chatbot that knows your mood and past entries</li>
-            <li>Mood dashboard with trend chart, streak, average score, and most common mood</li>
-            <li>History view with expandable past check-ins</li>
-            <li>Daily reminder notifications</li>
-            <li>Local storage — no server, no account required</li>
-          </ul>
+            <h4>Front-End</h4>
+            <div class="modal-tags">
+              <span>Next.js 16</span>
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>Tailwind CSS</span>
+            </div>
 
-          <h4>App Screens</h4>
-          <div class="modal-screenshots single">
-            <img src="images/mindcheck/1.png" alt="MindCheck app screens overview" />
-          </div>
+            <h4>Backend / Database</h4>
+            <div class="modal-tags">
+              <span>Supabase</span>
+              <span>Supabase Auth</span>
+              <span>Supabase Storage</span>
+            </div>
+
+            <h4>Tools</h4>
+            <div class="modal-tags">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+              <span>npm</span>
+            </div>
+
+            <h4>Deployment (Planned)</h4>
+            <div class="modal-tags">
+              <span>Vercel</span>
+            </div>
+
+            <h4>Highlights</h4>
+            <ul>
+              <li>Role-Based Access Control (RBAC): Separate dashboards for each role</li>
+              <li>Built to Scale: Mother Chapter now, designed for all chapters later</li>
+              <li>All-in-One Management System</li>
+            </ul>
+          `
+        },
+        mindcheck: {
+          icon: '🧠',
+          meta: 'ANDROID · AI-POWERED · STUDENT WELLNESS',
+          title: 'MindCheck Student Wellness',
+          body: `
+            <p>An Android mental wellness app for <strong>students</strong>, turning daily mood check-ins into <strong>AI-powered self-awareness</strong> through journaling, emotion detection, and a personal study coach — designed to grow with the user over time.</p>
+
+            <h4>Core Features</h4>
+            <ul>
+              <li>Mood check-ins with emoji-based logging</li>
+              <li>Journal entry with AI emotion detection</li>
+              <li>Personalized study strategy generated by Gemini</li>
+              <li>AI Study Coach chatbot that knows your mood and past entries</li>
+              <li>Mood dashboard with trend chart, streak, average score, and most common mood</li>
+              <li>History view with expandable past check-ins</li>
+              <li>Daily reminder notifications</li>
+              <li>Local storage — no server, no account required</li>
+            </ul>
+
+            <h4>App Screens</h4>
+            <div class="modal-screenshots single">
+              <img src="images/mindcheck/1.png" alt="MindCheck app screens overview" />
+            </div>
             <p style="font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">
-            Overview of all app screens — mood check-in, journal, dashboard, and study coach.
-          </p>
+              Overview of all app screens — mood check-in, journal, dashboard, and study coach.
+            </p>
 
-          <h4>Front-End</h4>
-          <div class="modal-tags">
-            <span>Android (Java)</span>
-            <span>XML Layouts</span>
-            <span>Material Design</span>
-            <span>MPAndroidChart</span>
-          </div>
+            <h4>Front-End</h4>
+            <div class="modal-tags">
+              <span>Android (Java)</span>
+              <span>XML Layouts</span>
+              <span>Material Design</span>
+              <span>MPAndroidChart</span>
+            </div>
 
-          <h4>Backend / Services</h4>   
-          <div class="modal-tags">
-            <span>Hugging Face API</span>
-            <span>Google Gemini API</span>
-            <span>OkHttp</span>
-            <span>Gson</span>
-          </div>
+            <h4>Backend / Services</h4>
+            <div class="modal-tags">
+              <span>Hugging Face API</span>
+              <span>Google Gemini API</span>
+              <span>OkHttp</span>
+              <span>Gson</span>
+            </div>
 
-          <h4>Database</h4>
-          <div class="modal-tags">
-            <span>SQLite</span>
-            <span>Room (local storage)</span>
-          </div>
+            <h4>Database</h4>
+            <div class="modal-tags">
+              <span>SQLite</span>
+              <span>Room (local storage)</span>
+            </div>
 
-          <h4>Tools</h4>
-          <div class="modal-tags">
-            <span>Android Studio</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Gradle</span>
-          </div>
-          
-          <h4>Deployment (Planned)</h4>
-          <div class="modal-tags">
-            <span>Google Play Store</span>
-          </div>  
+            <h4>Tools</h4>
+            <div class="modal-tags">
+              <span>Android Studio</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Gradle</span>
+            </div>
 
-          <h4>Highlights</h4>
-          <ul>
-            <li>AI Emotion Detection — Reads journal entries and detects mood</li>
-            <li>AI Study Coach — Personalized strategies and chat powered by Gemini</li>
-            <li>Privacy-First — Fully local storage, no account needed</li>
-          </ul>
-        `
-      },
-      vccafe: {
-        icon: '☕',
-        meta: 'BOOKING SYSTEM · COFFEE SHOP · WEB APP',
-        title: 'VC Cafe Pop-Up Cart Online Booking System',
-        body: `
-          <p>A web-based online booking system for <strong>VC Cafe, </strong> a mobile coffee and bar business serving events like weddings, birthdays, corporate gatherings, and festivals. The platform allows customers to book the pop-up coffee shop for their special occasions, while admins can manage, accept, or decline reservation requests from anywhere.</p>
+            <h4>Deployment (Planned)</h4>
+            <div class="modal-tags">
+              <span>Google Play Store</span>
+            </div>
 
-          <h4>Core Features</h4>
-          <ul>
-            <li>User Registration & Authentication</li>
-            <li>Online Event Booking</li>
-            <li>Admin Dashboard</li>
-            <li>Reservation Tracking</li>
-            <li>Customer Information Management</li>
-            <li>Role-Based Access Control</li>
-            <li>Service Showcase Pages</li>
-          </ul>
+            <h4>Highlights</h4>
+            <ul>
+              <li>AI Emotion Detection — Reads journal entries and detects mood</li>
+              <li>AI Study Coach — Personalized strategies and chat powered by Gemini</li>
+              <li>Privacy-First — Fully local storage, no account needed</li>
+            </ul>
+          `
+        },
+        vccafe: {
+          icon: '☕',
+          meta: 'BOOKING SYSTEM · COFFEE SHOP · WEB APP',
+          title: 'VC Cafe Pop-Up Cart Online Booking System',
+          body: `
+            <p>A web-based online booking system for <strong>VC Cafe,</strong> a mobile coffee and bar business serving events like weddings, birthdays, corporate gatherings, and festivals. The platform allows customers to book the pop-up coffee shop for their special occasions, while admins can manage, accept, or decline reservation requests from anywhere.</p>
 
-          <h4>App Screens</h4>
-          <div class="modal-screenshots">
-            <img src="images/vccafe/1.png" alt="VC Cafe screen 1" />
-            <img src="images/vccafe/2.png" alt="VC Cafe screen 2" />
-            <img src="images/vccafe/3.png" alt="VC Cafe screen 3" />
-            <img src="images/vccafe/4.png" alt="VC Cafe screen 4" />
-            <img src="images/vccafe/5.png" alt="VC Cafe screen 5" />
-            <img src="images/vccafe/6.png" alt="VC Cafe screen 6" />
-            <img src="images/vccafe/7.png" alt="VC Cafe screen 7" />
-            <img src="images/vccafe/8.png" alt="VC Cafe screen 8" />
-            <img src="images/vccafe/9.png" alt="VC Cafe screen 9" />
-            <img src="images/vccafe/10.png" alt="VC Cafe screen 10" />
-            <img src="images/vccafe/11.png" alt="VC Cafe screen 11" />
-          </div>
+            <h4>Core Features</h4>
+            <ul>
+              <li>User Registration & Authentication</li>
+              <li>Online Event Booking</li>
+              <li>Admin Dashboard</li>
+              <li>Reservation Tracking</li>
+              <li>Customer Information Management</li>
+              <li>Role-Based Access Control</li>
+              <li>Service Showcase Pages</li>
+            </ul>
 
-      <h4>Front-End</h4>
-      <div class="modal-tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Responsive Design</span>
-        <span>Minimal UI</span>
-      </div>
+            <h4>App Screens</h4>
+            <div class="modal-screenshots">
+              <img src="images/vccafe/1.png" alt="VC Cafe screen 1" />
+              <img src="images/vccafe/2.png" alt="VC Cafe screen 2" />
+              <img src="images/vccafe/3.png" alt="VC Cafe screen 3" />
+              <img src="images/vccafe/4.png" alt="VC Cafe screen 4" />
+              <img src="images/vccafe/5.png" alt="VC Cafe screen 5" />
+              <img src="images/vccafe/6.png" alt="VC Cafe screen 6" />
+              <img src="images/vccafe/7.png" alt="VC Cafe screen 7" />
+              <img src="images/vccafe/8.png" alt="VC Cafe screen 8" />
+              <img src="images/vccafe/9.png" alt="VC Cafe screen 9" />
+              <img src="images/vccafe/10.png" alt="VC Cafe screen 10" />
+              <img src="images/vccafe/11.png" alt="VC Cafe screen 11" />
+            </div>
 
-      <h4>Backend / Database</h4>
-      <div class="modal-tags">
-        <span>PHP</span>
-        <span>MySQL</span>
-        <span>Role-Based Access Control</span>
-      </div>
+            <h4>Front-End</h4>
+            <div class="modal-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>Minimal UI</span>
+            </div>
 
-      <h4>Tools</h4>
-      <div class="modal-tags">
-        <span>Figma</span>
-        <span>Git</span>
-        <span>GitHub</span>
-        <span>VS Code</span>
-        <span>phpMyAdmin</span>
-      </div>
+            <h4>Backend / Database</h4>
+            <div class="modal-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Role-Based Access Control</span>
+            </div>
 
-      <h4>Deployment (Planned)</h4>
-      <div class="modal-tags">
-        <span>Vercel</span>
-      </div>
+            <h4>Tools</h4>
+            <div class="modal-tags">
+              <span>Figma</span>
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>VS Code</span>
+              <span>phpMyAdmin</span>
+            </div>
 
-      <h4>Highlights</h4>
-      <ul>
-        <li>Mobile Business Booking — Lets a pop-up coffee shop manage reservations from anywhere</li>
-        <li>Admin Control — Accept or decline bookings in just a few clicks</li>
-        <li>Customer Dashboard — Submit, manage, and track reservation status (approved or declined)</li>
-      </ul>    
-          
-        `
-      },
-      portfolio: {
-        icon: '🌐',
-        meta: 'FRONT-END · PERSONAL · UI/UX',
-        title: 'Developer Portfolio',
-        body: `
-          <p>A personal portfolio website built from scratch with plain HTML, CSS, and 
-          JavaScript — designed to feel <em>me</em>: warm, editorial, and a little playful.</p>
+            <h4>Deployment (Planned)</h4>
+            <div class="modal-tags">
+              <span>Vercel</span>
+            </div>
 
-          <h4>Core Features</h4>
-          <ul>
-            <li>Multi-page site: Home · About · Projects · Reach Me</li>
-            <li>Top nav that transforms into a side nav on scroll</li>
-            <li>Click-to-open modal popups for each project</li>
-            <li>Beyond Code photo gallery with lightbox navigation</li>
-            <li>Fully responsive (desktop, tablet, mobile)</li>
-          </ul>
+            <h4>Highlights</h4>
+            <ul>
+              <li>Mobile Business Booking — Lets a pop-up coffee shop manage reservations from anywhere</li>
+              <li>Admin Control — Accept or decline bookings in just a few clicks</li>
+              <li>Customer Dashboard — Submit, manage, and track reservation status</li>
+            </ul>
+          `
+        },
+        portfolio: {
+          icon: '🌐',
+          meta: 'PERSONAL · FRONT-END · UI/UX',
+          title: 'Developer Portfolio',
+          body: `
+            <p>This very website — designed and built from scratch as a personal front-end and UI/UX project.</p>
 
-          <h4>Front-End</h4>
-          <div class="modal-tags">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-          </div>
+            <h4>What I Built</h4>
+            <ul>
+              <li>Multi-page site: Home · About · Projects · Reach Me</li>
+              <li>Custom rose/ivory/burgundy design system</li>
+              <li>Rose Bloom splash animation</li>
+              <li>Top nav that becomes a side nav on scroll</li>
+              <li>Click-to-open modal popups for each project</li>
+              <li>Horizontal filmstrip gallery with lightbox navigation</li>
+              <li>Fully responsive (desktop, tablet, mobile)</li>
+            </ul>
 
-          <h4>Backend / Database</h4>
-          <div class="modal-tags">
-            <span>None — static site</span>
-          </div>
+            <h4>Tech Stack</h4>
+            <div class="modal-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>GitHub Pages</span>
+            </div>
 
-          <h4>Tools</h4>
-          <div class="modal-tags">
-            <span>VS Code</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Chrome DevTools</span>
-          </div>
+            <h4>Live Site</h4>
+            <p><a href="https://wadtpc.github.io" target="_blank">wadtpc.github.io</a></p>
+          `
+        },
+        convention: {
+          icon: '🎪',
+          meta: 'DESIGN LEAD · PRODUCTION · OCT 2026',
+          title: 'Archdiocesan Convention 2026',
+          body: `
+            <p>Serving on the production team for the <strong>1st Archdiocesan Convention of CSN de Cebu</strong> — a gathering of all registered chapters across the Philippines.</p>
 
-          <h4>Deployment</h4>
-          <div class="modal-tags">
-            <span>GitHub Pages</span>
-          </div>
+            <h4>My Roles</h4>
+            <ul>
+              <li>🎨 <strong>Design Lead</strong> — visual identity & event collateral</li>
+              <li>💃 <strong>Dance Lead</strong> — choreography & performance</li>
+              <li>📋 <strong>Registration Team</strong> — member coordination</li>
+            </ul>
 
-          <h4>Highlights</h4>
-          <ul>
-            <li>Designed and coded from scratch — no templates or frameworks</li>
-            <li>Custom rose · ivory · burgundy design system</li>
-            <li>AI-assisted during development, fully understood and self-shipped</li>
-          </ul>  
+            <h4>What I'm Designing</h4>
+            <ul>
+              <li>Posters & flyers</li>
+              <li>Stage backdrop</li>
+              <li>Program booklet</li>
+              <li>Event shirts & merch</li>
+              <li>Presentation slides</li>
+            </ul>
 
-          <h4>Live Site</h4>
-          <p><a href="https://wadtpc.github.io" target="_blank">wadtpc.github.io</a></p>
-        `
-      },
-      convention: {
-        icon: '🎪',
-        meta: 'DESIGN LEAD · PRODUCTION · OCT 2026',
-        title: 'Archdiocesan Convention 2026',
-        body: `
-          <p>Serving on the production team for the <strong>1st Archdiocesan Convention 
-          of CSN de Cebu</strong> — a gathering of all registered chapters across the 
-          Philippines.</p>
-          <h4>My Roles</h4>
-          <ul>
-            <li>🎨 <strong>Design Lead</strong> — visual identity & event collateral</li>
-            <li>💃 <strong>Dance Lead</strong> — choreography & performance</li>
-            <li>📋 <strong>Registration Team</strong> — member coordination</li>
-          </ul>
-          <h4>What I'm Designing</h4>
-          <ul>
-            <li>Posters & flyers</li>
-            <li>Stage backdrop</li>
-            <li>Program booklet</li>
-            <li>Event shirts & merch</li>
-            <li>Presentation slides</li>
-          </ul>
-          <h4>Details</h4>
-          <ul>
-            <li>📅 October 2026</li>
-            <li>📍 Cebu Business Hotel</li>
-            <li>🌍 All registered chapters across the Philippines</li>
-            <li>🎯 Purpose: Unity</li>
-          </ul>
-          <h4>Tools</h4>
-          <div class="modal-tags">
-            <span>Canva</span><span>Design</span><span>Leadership</span>
-          </div>
-        `
-      }
-    };
+            <h4>Details</h4>
+            <ul>
+              <li>📅 October 2026</li>
+              <li>📍 Cebu Business Hotel</li>
+              <li>🌍 All registered chapters across the Philippines</li>
+              <li>🎯 Purpose: Unity</li>
+            </ul>
 
-    const overlay = document.getElementById('modalOverlay');
-    const modalBody = document.getElementById('modalBody');
-    const modalClose = document.getElementById('modalClose');
+            <h4>Tools</h4>
+            <div class="modal-tags">
+              <span>Canva</span>
+              <span>Design</span>
+              <span>Leadership</span>
+            </div>
+          `
+        }
+      };
 
-    document.querySelectorAll('.proj-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const key = card.dataset.project;
-        const p = projects[key];
-        if (!p) return;
+      document.querySelectorAll('.proj-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const key = card.dataset.project;
+          const p = projects[key];
+          if (!p) return;
 
-        modalBody.innerHTML = `
-          <div class="modal-header">
-            <div class="modal-icon">${p.icon}</div>
-            <div class="modal-meta">${p.meta}</div>
-            <h2>${p.title}</h2>
-          </div>
-          <div class="modal-content">${p.body}</div>
-        `;
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+          modalBody.innerHTML = `
+            <div class="modal-header">
+              <div class="modal-icon">${p.icon}</div>
+              <div class="modal-meta">${p.meta}</div>
+              <h2>${p.title}</h2>
+            </div>
+            <div class="modal-content">${p.body}</div>
+          `;
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
       });
-    });
 
-    function closeModal() {
-      overlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+      function closeModal() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
 
-    modalClose.addEventListener('click', closeModal);
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
+      modalClose.addEventListener('click', closeModal);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
   </script>
 
 </body>
 </html>
-
-//hyperlink each project to its own page with more details, screenshots, and possibly a live demo or GitHub link.
