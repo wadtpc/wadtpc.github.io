@@ -18,17 +18,60 @@
 </head>
 <body>
 
+    <!-- ============================================================
+       ANIMATED BACKGROUND LAYERS
+       ============================================================ -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+    <!-- ============================================================
+       DARK MODE TOGGLE
+       ============================================================ -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
+    <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+  </button>
+
   <!-- ============================================================
-       SPLASH SCREEN
+       SPLASH SCREEN — Cottagecore Pixel Edition
        ============================================================ -->
   <div class="splash-overlay" id="splashOverlay">
     <div class="splash-stage">
-      <div class="splash-dot"></div>
+
+      <!-- Blooming flower -->
+      <div class="splash-flower">
+        <span class="splash-petal">🌷</span>
+      </div>
+
+      <!-- Decorative top divider -->
+      <div class="splash-divider">
+        <span class="splash-dash">✦</span>
+      </div>
+
+      <!-- Name -->
       <div class="splash-name">DOROTHY TEPACE</div>
-      <div class="splash-tagline">portfolio · 2026</div>
+
+      <!-- Decorative bottom divider -->
+      <div class="splash-divider">
+        <span class="splash-dash">✦</span>
+      </div>
+
+      <!-- Tagline -->
+      <div class="splash-tagline">creative · responsive · ambitious</div>
+
+      <!-- Loading dots -->
+      <div class="splash-loader">
+        <span class="splash-loader-dot"></span>
+        <span class="splash-loader-dot"></span>
+        <span class="splash-loader-dot"></span>
+      </div>
+
     </div>
   </div>
-
 
   <!-- ============================================================
        TOP NAVIGATION
@@ -553,6 +596,28 @@
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'ArrowLeft') prevImage();
+      });
+    })();
+
+        /* ============================================================
+       7. DARK MODE TOGGLE — saves preference to localStorage
+       ============================================================ */
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+
+      const STORAGE_KEY = 'theme';
+
+      /* Apply saved theme immediately to prevent flash */
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
       });
     })();
 
