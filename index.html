@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dorothy Tepace · Home</title>
+  <title>Dorothy Tepace · Portfolio 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -17,7 +17,7 @@
     <div class="splash-stage">
       <div class="splash-dot"></div>
       <div class="splash-name">DOROTHY TEPACE</div>
-      <div class="splash-tagline">creative · responsive · ambitious</div>
+      <div class="splash-tagline">portfolio · 2026</div>
     </div>
   </div>
 
@@ -44,184 +44,121 @@
   <main class="page">
 
     <!-- ============================================================
-         HERO — GIANT EDITORIAL NAME
+         SMALL EDITORIAL HEADER
          ============================================================ -->
-    <section class="hero-editorial">
-      <h1 class="hero-name-giant">
-        Dorothy<br />
-        <span class="accent">Tepace</span>
-      </h1>
-
-      <div class="hero-meta-row">
-        <div class="hero-tagline-block">
-          <span class="hero-tagline-label">I am a</span>
-          <div class="hero-typing">
-            <span class="typing-text" id="typingText"></span>
-            <span class="typing-cursor">|</span>
-          </div>
-        </div>
-
-        <div class="hero-avatar-mini">
-          <img src="avatar.jpg" alt="Dorothy Tepace" />
+    <header class="home-header reveal">
+      <div class="home-header-left">
+        <h1>Dorothy<br /><span class="accent">Tepace</span></h1>
+        <p class="role">
+          Front-end developer & UI/UX designer building warm, human-centered experiences for communities I care about.
+        </p>
+        <div class="hero-typing">
+          <span class="typing-text" id="typingText"></span>
+          <span class="typing-cursor">|</span>
         </div>
       </div>
 
-      <div class="hero-scroll-cue">
-        Scroll to explore <span class="arrow">↓</span>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         WHAT I DO — WIDE PROJECT BANNERS
-         ============================================================ -->
-    <section class="banner-section">
-      <div class="section-label">
-        <span class="num">01</span>
-        <h2>What I Do</h2>
-        <span class="line"></span>
-      </div>
-
-      <div class="banner-list">
-
-        <a href="projects.html" class="banner-item reveal">
-          <div class="banner-icon">⛪</div>
-          <div class="banner-content">
-            <h3>CSN de Cebu Web</h3>
-            <p>A full-stack management platform for a multi-chapter church organization at the Basilica Minore del Santo Niño de Cebu.</p>
-            <div class="banner-tags">
-              <span>Next.js 16</span>
-              <span>TypeScript</span>
-              <span>Supabase</span>
-              <span>Tailwind CSS</span>
-            </div>
-          </div>
-          <div class="banner-arrow">→</div>
-        </a>
-
-        <a href="projects.html" class="banner-item reveal">
-          <div class="banner-icon">🧠</div>
-          <div class="banner-content">
-            <h3>MindCheck Student Wellness</h3>
-            <p>An Android mental wellness app that turns daily mood check-ins into AI-powered self-awareness and personalized study strategies.</p>
-            <div class="banner-tags">
-              <span>Android</span>
-              <span>AI-Powered</span>
-              <span>UI/UX</span>
-              <span>Gemini API</span>
-            </div>
-          </div>
-          <div class="banner-arrow">→</div>
-        </a>
-
-        <a href="projects.html" class="banner-item reveal">
-          <div class="banner-icon">☕</div>
-          <div class="banner-content">
-            <h3>VC Cafe Booking System</h3>
-            <p>A web-based online booking platform for a pop-up coffee shop — handling reservations, customer info, and admin management.</p>
-            <div class="banner-tags">
-              <span>PHP</span>
-              <span>MySQL</span>
-              <span>Web App</span>
-              <span>System Design</span>
-            </div>
-          </div>
-          <div class="banner-arrow">→</div>
-        </a>
-
-        <a href="projects.html" class="banner-item reveal">
-          <div class="banner-icon">🎪</div>
-          <div class="banner-content">
-            <h3>Archdiocesan Convention 2026</h3>
-            <p>Design lead, dance lead, and registration team member for the 1st Archdiocesan Convention of CSN de Cebu.</p>
-            <div class="banner-tags">
-              <span>Design</span>
-              <span>Leadership</span>
-              <span>Event</span>
-            </div>
-          </div>
-          <div class="banner-arrow">→</div>
-        </a>
-
-        <a href="projects.html" class="banner-item reveal">
-          <div class="banner-icon">🌐</div>
-          <div class="banner-content">
-            <h3>Developer Portfolio</h3>
-            <p>This very website — designed and built from scratch with HTML, CSS, and JavaScript. No frameworks, no templates.</p>
-            <div class="banner-tags">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript</span>
-              <span>GitHub Pages</span>
-            </div>
-          </div>
-          <div class="banner-arrow">→</div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         BEYOND CODE — HORIZONTAL FILMSTRIP
-         ============================================================ -->
-    <section class="beyond-code">
-      <div class="section-label">
-        <span class="num">02</span>
-        <h2>Beyond Code</h2>
-        <span class="line"></span>
-      </div>
-
-      <div class="filmstrip-wrap" id="filmstripWrap">
-        <div class="filmstrip">
-
-          <div class="film-tile" data-gallery="church" data-caption="Church Community">
-            <img src="images/church/1.jpg" alt="Church community" />
-          </div>
-
-          <div class="film-tile" data-gallery="design" data-caption="Design Work">
-            <img src="images/design/1.png" alt="Design work" />
-          </div>
-
-          <div class="film-tile" data-gallery="convention" data-caption="Convention 2026">
-            <img src="images/convention/1.jpg" alt="Convention 2026" />
-          </div>
-
-          <div class="film-tile" data-gallery="outreach" data-caption="Outreach & Service">
-            <img src="images/outreach/1.jpg" alt="Outreach and service" />
-          </div>
-
-          <div class="film-tile" data-gallery="dance" data-caption="Dance & Performance">
-            <img src="images/dance/1.jpg" alt="Dance and performance" />
-          </div>
-
+      <div class="home-header-right">
+        <div>
+          <div class="meta-label">Based in</div>
+          <div class="meta-value">Cebu, Philippines</div>
+        </div>
+        <div>
+          <div class="meta-label">Portfolio</div>
+          <div class="meta-value">2026</div>
         </div>
       </div>
-
-      <p class="filmstrip-hint">
-        Drag or scroll to explore <span class="arrow">→</span>
-      </p>
-    </section>
+    </header>
 
     <!-- ============================================================
-         CTA
+         GALLERY GRID — 5 PROJECTS
          ============================================================ -->
-    <section class="cta-row reveal">
-      <a href="projects.html" class="btn btn-primary">See my work →</a>
-      <a href="reach.html" class="btn btn-secondary">Get in touch</a>
+    <section class="gallery-grid">
+
+      <!-- 1. CSN de Cebu Web — placeholder (no image yet) -->
+      <a href="projects.html" class="gallery-tile placeholder reveal" data-project="csn">
+        <div class="placeholder-inner">
+          <span class="placeholder-icon">⛪</span>
+          <h3>CSN de Cebu Web</h3>
+        </div>
+        <div class="gallery-tile-content">
+          <span class="gallery-tile-index">01</span>
+          <h3>CSN de Cebu Web</h3>
+          <div class="gallery-tile-meta">Full-Stack · In Progress</div>
+          <div class="gallery-tile-tags">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Supabase</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. MindCheck -->
+      <a href="projects.html" class="gallery-tile reveal" data-project="mindcheck">
+        <img src="images/mindcheck/1.png" alt="MindCheck Student Wellness" />
+        <div class="gallery-tile-content">
+          <span class="gallery-tile-index">02</span>
+          <h3>MindCheck Student Wellness</h3>
+          <div class="gallery-tile-meta">Android · AI-Powered</div>
+          <div class="gallery-tile-tags">
+            <span>Android</span>
+            <span>Gemini API</span>
+            <span>UI/UX</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. VC Cafe Booking -->
+      <a href="projects.html" class="gallery-tile reveal" data-project="vccafe">
+        <img src="images/vccafe/1.png" alt="VC Cafe Booking System" />
+        <div class="gallery-tile-content">
+          <span class="gallery-tile-index">03</span>
+          <h3>VC Cafe Booking System</h3>
+          <div class="gallery-tile-meta">Web App · Group Project</div>
+          <div class="gallery-tile-tags">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>System Design</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. Developer Portfolio — placeholder (no image yet) -->
+      <a href="projects.html" class="gallery-tile placeholder reveal" data-project="portfolio">
+        <div class="placeholder-inner">
+          <span class="placeholder-icon">🌐</span>
+          <h3>Developer Portfolio</h3>
+        </div>
+        <div class="gallery-tile-content">
+          <span class="gallery-tile-index">04</span>
+          <h3>Developer Portfolio</h3>
+          <div class="gallery-tile-meta">Front-End · Personal</div>
+          <div class="gallery-tile-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. Archdiocesan Convention 2026 -->
+      <a href="projects.html" class="gallery-tile reveal" data-project="convention">
+        <img src="images/convention/1.jpg" alt="Archdiocesan Convention 2026" />
+        <div class="gallery-tile-content">
+          <span class="gallery-tile-index">05</span>
+          <h3>Archdiocesan Convention 2026</h3>
+          <div class="gallery-tile-meta">Design Lead · Production</div>
+          <div class="gallery-tile-tags">
+            <span>Design</span>
+            <span>Leadership</span>
+            <span>Event</span>
+          </div>
+        </div>
+      </a>
+
     </section>
 
   </main>
-
-  <!-- ========== LIGHTBOX ========== -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-inner">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">›</button>
-      <div class="lightbox-content" id="lightboxContent"></div>
-      <div class="lightbox-caption" id="lightboxCaption"></div>
-      <div class="lightbox-counter" id="lightboxCounter"></div>
-    </div>
-  </div>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
@@ -248,7 +185,7 @@
             splashOverlay.style.display = 'none';
           }, 800);
           sessionStorage.setItem('splashShown', 'true');
-        }, 3000);
+        }, 2800);
       }
     })();
 
@@ -327,227 +264,13 @@
           if (entry.isIntersecting) {
             setTimeout(() => {
               entry.target.classList.add('in-view');
-            }, index * 80);
+            }, index * 90);
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.1 });
 
       reveals.forEach(el => observer.observe(el));
-    })();
-
-    /* ========== GALLERY LIGHTBOX (multi-photo) ========== */
-    (function () {
-      const lightbox = document.getElementById('lightbox');
-      if (!lightbox) return;
-
-      const lightboxContent = document.getElementById('lightboxContent');
-      const lightboxCaption = document.getElementById('lightboxCaption');
-      const lightboxCounter = document.getElementById('lightboxCounter');
-      const lightboxClose = document.getElementById('lightboxClose');
-      const lightboxPrev = document.getElementById('lightboxPrev');
-      const lightboxNext = document.getElementById('lightboxNext');
-
-      const galleries = {
-        church: {
-          images: [
-            'images/church/1.jpg',
-            'images/church/2.jpg',
-            'images/church/3.jpg',
-            'images/church/4.jpg',
-            'images/church/5.jpg',
-            'images/church/6.jpg'
-          ],
-          captions: [
-            'With my church org',
-            'Community event',
-            'Serving together',
-            'Another moment',
-            'Gathering',
-            'Fellowship'
-          ]
-        },
-        design: {
-          images: [
-            'images/design/1.png',
-            'images/design/2.png'
-          ],
-          captions: [
-            'Figma mockup',
-            'Design experiment'
-          ]
-        },
-        convention: {
-          images: [
-            'images/convention/1.jpg',
-            'images/convention/2.png',
-            'images/convention/3.png',
-            'images/convention/4.jpg',
-            'images/convention/5.jpg'
-          ],
-          captions: [
-            'Convention planning',
-            'Team session',
-            'Behind the scenes',
-            'Prep work',
-            'Event details'
-          ]
-        },
-        outreach: {
-          images: [
-            'images/outreach/1.jpg',
-            'images/outreach/2.png',
-            'images/outreach/3.jpg'
-          ],
-          captions: [
-            'Outreach activity',
-            'Serving the community',
-            'Giving back'
-          ]
-        },
-        dance: {
-          images: [
-            'images/dance/1.jpg',
-            'images/dance/2.jpg',
-            'images/dance/3.jpg',
-            'images/dance/4.jpg',
-            'images/dance/5.png'
-          ],
-          captions: [
-            'Dance practice',
-            'Performance prep',
-            'Rehearsal',
-            'On stage',
-            'Group performance'
-          ]
-        }
-      };
-
-      let currentGallery = [];
-      let currentCaptions = [];
-      let currentIndex = 0;
-      let currentMainCaption = '';
-
-      function openGallery(galleryKey, mainCaption) {
-        const gallery = galleries[galleryKey];
-        if (!gallery || gallery.images.length === 0) return;
-
-        currentGallery = gallery.images;
-        currentCaptions = gallery.captions;
-        currentMainCaption = mainCaption || '';
-        currentIndex = 0;
-
-        renderLightboxImage();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function renderLightboxImage() {
-        const src = currentGallery[currentIndex];
-        const caption = currentCaptions[currentIndex] || currentMainCaption;
-
-        lightboxContent.innerHTML = `<img src="${src}" alt="${caption}" />`;
-        lightboxCaption.textContent = caption;
-        if (lightboxCounter) {
-          lightboxCounter.textContent = `${currentIndex + 1} of ${currentGallery.length}`;
-        }
-
-        const showNav = currentGallery.length > 1;
-        if (lightboxPrev) lightboxPrev.style.display = showNav ? 'flex' : 'none';
-        if (lightboxNext) lightboxNext.style.display = showNav ? 'flex' : 'none';
-      }
-
-      function nextImage() {
-        if (currentGallery.length <= 1) return;
-        currentIndex = (currentIndex + 1) % currentGallery.length;
-        renderLightboxImage();
-      }
-
-      function prevImage() {
-        if (currentGallery.length <= 1) return;
-        currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-        renderLightboxImage();
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      document.querySelectorAll('.film-tile').forEach(tile => {
-        tile.addEventListener('click', () => {
-          const galleryKey = tile.dataset.gallery;
-          const mainCaption = tile.dataset.caption || '';
-          openGallery(galleryKey, mainCaption);
-        });
-      });
-
-      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-      if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
-      if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
-
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') prevImage();
-      });
-    })();
-
-    /* ========== FILMSTRIP DRAG ========== */
-    (function () {
-      const wrap = document.getElementById('filmstripWrap');
-      if (!wrap) return;
-
-      let isDown = false;
-      let startX = 0;
-      let scrollLeft = 0;
-
-      wrap.addEventListener('mousedown', (e) => {
-        isDown = true;
-        wrap.classList.add('active');
-        startX = e.pageX - wrap.offsetLeft;
-        scrollLeft = wrap.scrollLeft;
-      });
-
-      wrap.addEventListener('mouseleave', () => {
-        isDown = false;
-        wrap.classList.remove('active');
-      });
-
-      wrap.addEventListener('mouseup', () => {
-        isDown = false;
-        wrap.classList.remove('active');
-      });
-
-      wrap.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - wrap.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        wrap.scrollLeft = scrollLeft - walk;
-      });
-    })();
-
-    /* ========== PARALLAX (subtle) ========== */
-    (function () {
-      // Only run on desktop, skip on touch devices
-      if (window.matchMedia('(pointer: coarse)').matches) return;
-
-      const hero = document.querySelector('.hero-name-giant');
-      if (!hero) return;
-
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        if (y < 800) {
-          hero.style.transform = `translateY(${y * 0.15}px)`;
-          hero.style.opacity = 1 - (y / 1000);
-        }
-      });
     })();
   </script>
 
