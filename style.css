@@ -144,7 +144,7 @@ a:hover { color: var(--ivory); }
 .nav-links a.active { color: var(--rose); font-weight: 600; }
 
 /* ============================================================
-   SIDE NAVIGATION — appears on scroll
+   SIDE NAVIGATION
    ============================================================ */
 .side-nav {
   position: fixed;
@@ -307,7 +307,7 @@ a:hover { color: var(--ivory); }
 }
 
 /* ============================================================
-   GALLERY GRID — THE MAIN EVENT
+   GALLERY GRID — ALL TILES CENTERED
    ============================================================ */
 .gallery-grid {
   display: grid;
@@ -326,7 +326,9 @@ a:hover { color: var(--ivory); }
   border: 1px solid rgba(217, 165, 160, 0.15);
   transition: all 0.5s var(--ease-out);
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-tile:hover {
@@ -335,7 +337,7 @@ a:hover { color: var(--ivory); }
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* Image inside tile */
+/* Image — full cover, darkened so text pops */
 .gallery-tile img {
   position: absolute;
   inset: 0;
@@ -343,77 +345,76 @@ a:hover { color: var(--ivory); }
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s var(--ease-out);
-  opacity: 0.85;
+  opacity: 0.3;
 }
 
 .gallery-tile:hover img {
   transform: scale(1.06);
-  opacity: 1;
+  opacity: 0.45;
 }
 
-/* Overlay gradient for text readability */
+/* Dark overlay for readability */
 .gallery-tile::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to top,
-    rgba(42, 11, 18, 0.95) 0%,
-    rgba(42, 11, 18, 0.6) 45%,
-    rgba(42, 11, 18, 0.15) 75%,
-    transparent 100%
+    to bottom,
+    rgba(42, 11, 18, 0.75) 0%,
+    rgba(42, 11, 18, 0.7) 50%,
+    rgba(42, 11, 18, 0.85) 100%
   );
   z-index: 2;
-  transition: opacity 0.4s var(--ease-out);
+  transition: background 0.4s var(--ease-out);
 }
 
 .gallery-tile:hover::before {
   background: linear-gradient(
-    to top,
-    rgba(42, 11, 18, 0.98) 0%,
-    rgba(42, 11, 18, 0.7) 50%,
-    rgba(42, 11, 18, 0.2) 80%,
-    transparent 100%
+    to bottom,
+    rgba(42, 11, 18, 0.7) 0%,
+    rgba(42, 11, 18, 0.65) 50%,
+    rgba(42, 11, 18, 0.8) 100%
   );
 }
 
-/* Tile content — bottom-left aligned */
+/* Content — fully centered */
 .gallery-tile-content {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 2rem 2rem 1.8rem;
+  position: relative;
   z-index: 3;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.7rem;
+  padding: 2.5rem;
+  width: 100%;
 }
 
 .gallery-tile-index {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--rose);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.2rem;
-  opacity: 0.85;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  margin: 0;
 }
 
 .gallery-tile h3 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
   font-weight: 600;
   color: var(--ivory);
   letter-spacing: -0.02em;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0;
   max-width: 16ch;
   transition: transform 0.4s var(--ease-out);
 }
 
 .gallery-tile:hover h3 {
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
 .gallery-tile-meta {
@@ -426,10 +427,11 @@ a:hover { color: var(--ivory); }
   margin: 0;
 }
 
-/* Hidden tags that fade in on hover */
+/* Tags — fade in on hover */
 .gallery-tile-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.4rem;
   margin-top: 0.6rem;
   max-height: 0;
@@ -456,74 +458,31 @@ a:hover { color: var(--ivory); }
 }
 
 /* ============================================================
-   PLACEHOLDER TILES — match image tile style
+   PLACEHOLDER TILES — icon centered above the text
    ============================================================ */
 .gallery-tile.placeholder {
-  display: block;
-  position: relative;
   background:
-    linear-gradient(135deg, #4a1820 0%, #2a0b12 100%),
-    radial-gradient(circle at 30% 20%, rgba(217, 165, 160, 0.2), transparent 60%);
-  background-blend-mode: overlay, normal;
+    radial-gradient(circle at 50% 35%, rgba(217, 165, 160, 0.12), transparent 60%),
+    linear-gradient(135deg, #4a1820 0%, var(--burgundy-night) 100%);
 }
 
-/* Subtle dot pattern overlay */
-.gallery-tile.placeholder::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(217, 165, 160, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Gradient overlay for text readability — matches image tiles */
 .gallery-tile.placeholder::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(42, 11, 18, 0.95) 0%,
-    rgba(42, 11, 18, 0.5) 40%,
-    rgba(42, 11, 18, 0.15) 70%,
-    transparent 100%
-  );
-  z-index: 2;
+  background: radial-gradient(circle at 50% 35%, rgba(217, 165, 160, 0.05), transparent 70%);
 }
 
-/* Centered icon */
-.gallery-tile.placeholder .placeholder-inner {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  gap: 1rem;
-}
-
-.gallery-tile.placeholder .placeholder-icon {
-  font-size: 4rem;
-  line-height: 1;
+/* The icon rendered via CSS ::before on the content wrapper */
+.gallery-tile.placeholder .gallery-tile-content::before {
+  content: attr(data-icon);
   display: block;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
   transition: transform 0.5s var(--ease-spring);
 }
 
-.gallery-tile.placeholder:hover .placeholder-icon {
-  transform: scale(1.15) rotate(-5deg);
-}
-
-/* Hide the index/name/meta that used to be centered — now they're at the bottom */
-.gallery-tile.placeholder .gallery-tile-index,
-.gallery-tile.placeholder h3,
-.gallery-tile.placeholder .gallery-tile-meta {
-  display: none;
+.gallery-tile.placeholder:hover .gallery-tile-content::before {
+  transform: scale(1.12) rotate(-5deg);
 }
 
 /* ============================================================
@@ -572,10 +531,7 @@ a:hover { color: var(--ivory); }
   margin-bottom: 6rem;
 }
 
-.about-photo-col {
-  position: sticky;
-  top: 120px;
-}
+.about-photo-col { position: sticky; top: 120px; }
 
 .about-photo {
   width: 100%;
@@ -776,9 +732,7 @@ a:hover { color: var(--ivory); }
 /* ============================================================
    REACH ME PAGE
    ============================================================ */
-.reach-hero {
-  margin-bottom: 5rem;
-}
+.reach-hero { margin-bottom: 5rem; }
 
 .reach-hero h1 {
   font-size: clamp(3rem, 10vw, 8rem);
@@ -809,10 +763,7 @@ a:hover { color: var(--ivory); }
   margin-bottom: 5rem;
 }
 
-.contact-rows {
-  display: flex;
-  flex-direction: column;
-}
+.contact-rows { display: flex; flex-direction: column; }
 
 .contact-row {
   display: flex;
@@ -827,10 +778,7 @@ a:hover { color: var(--ivory); }
   position: relative;
 }
 
-.contact-row:hover {
-  padding-left: 1rem;
-  color: var(--rose);
-}
+.contact-row:hover { padding-left: 1rem; color: var(--rose); }
 
 .contact-row .contact-label {
   font-size: 0.7rem;
@@ -1157,7 +1105,6 @@ a:hover { color: var(--ivory); }
   font-weight: 500;
 }
 
-/* Screenshots inside modal */
 .modal-screenshots {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -1248,7 +1195,6 @@ a:hover { color: var(--ivory); }
   opacity: 0;
   animation: fadeUp 1.3s var(--ease-out) 1.4s forwards;
   margin-bottom: 1rem;
-  font-variation-settings: "opsz" 144, "SOFT" 40;
 }
 
 .splash-overlay .splash-tagline {
@@ -1285,10 +1231,7 @@ a:hover { color: var(--ivory); }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1000px) {
-  .about-hero {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+  .about-hero { grid-template-columns: 1fr; gap: 3rem; }
   .about-photo-col { position: static; }
   .contact-editorial { grid-template-columns: 1fr; }
   .qr-block { max-width: 300px; margin: 0 auto; }
@@ -1324,14 +1267,9 @@ a:hover { color: var(--ivory); }
     gap: 1.5rem;
     padding: 2rem 0;
   }
-  .home-header-right {
-    align-items: flex-start;
-  }
+  .home-header-right { align-items: flex-start; }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+  .gallery-grid { grid-template-columns: 1fr; gap: 1rem; }
 
   .about-story-col p { font-size: 1.05rem; }
   .about-photo { border-radius: 1.5rem; }
