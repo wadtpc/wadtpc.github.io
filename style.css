@@ -463,7 +463,6 @@ a:hover { color: var(--moss); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 1.8rem;
-  margin-bottom: 6rem;
 }
 
 .gallery-tile {
