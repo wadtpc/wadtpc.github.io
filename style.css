@@ -446,7 +446,9 @@ a:hover { color: var(--ivory); }
   backdrop-filter: blur(6px);
 }
 
-/* Placeholder tiles (no image yet) */
+/* ============================================================
+   PLACEHOLDER TILES (no image yet)
+   ============================================================ */
 .gallery-tile.placeholder {
   display: flex;
   align-items: center;
@@ -459,21 +461,49 @@ a:hover { color: var(--ivory); }
 }
 
 .gallery-tile.placeholder .placeholder-inner {
-  text-align: center;
+  position: relative;
   z-index: 3;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   padding: 2rem;
 }
 
 .gallery-tile.placeholder .placeholder-icon {
   font-size: 3.5rem;
   display: block;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+.gallery-tile.placeholder .gallery-tile-index {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--rose);
+  letter-spacing: 0.02em;
+  margin-bottom: 0;
 }
 
 .gallery-tile.placeholder h3 {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   color: var(--ivory);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 14ch;
+}
+
+.gallery-tile.placeholder .gallery-tile-meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 0.4rem;
 }
 
 /* ============================================================
