@@ -4,20 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dorothy Tepace · About</title>
+
+  <!-- Meta -->
+  <meta name="description" content="About Dorothy Tepace — front-end developer & UI/UX designer from Cebu, Philippines." />
+  <meta name="theme-color" content="#fdf6ec" />
+  <meta name="author" content="Dorothy Tepace" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌷</text></svg>" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- ============================================================
+
+  <!-- ============================================================
+       ANIMATED BACKGROUND LAYERS
+       ============================================================ -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
        DARK MODE TOGGLE
        ============================================================ -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
-    <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+    <span class="theme-toggle-icon">☀️</span>
   </button>
+
 
   <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
@@ -41,9 +69,7 @@
   <!-- ========== MAIN ========== -->
   <main class="page">
 
-    <!-- ============================================================
-         ABOUT HERO
-         ============================================================ -->
+    <!-- ABOUT HERO -->
     <header class="page-header">
       <h1>About Me</h1>
       <p class="page-subtitle">A little more than the surface.</p>
@@ -77,9 +103,7 @@
 
     </section>
 
-    <!-- ============================================================
-         WHAT I DO — Editorial Skills Grid
-         ============================================================ -->
+    <!-- WHAT I DO -->
     <section class="section-label">
       <span class="num">01</span>
       <h2>What I Do</h2>
@@ -89,9 +113,11 @@
     <section class="skills-editorial">
 
       <div class="skill-block reveal">
-        <span class="skill-num">i.</span>
-        <h3>Front-End</h3>
-        <ul>
+        <div class="skill-header">
+          <span class="skill-num">i.</span>
+          <h3>⚡ Front-End</h3>
+        </div>
+        <ul class="skill-pills">
           <li>HTML5</li>
           <li>CSS3</li>
           <li>JavaScript</li>
@@ -103,9 +129,11 @@
       </div>
 
       <div class="skill-block reveal">
-        <span class="skill-num">ii.</span>
-        <h3>UI/UX Design</h3>
-        <ul>
+        <div class="skill-header">
+          <span class="skill-num">ii.</span>
+          <h3>🎨 UI/UX Design</h3>
+        </div>
+        <ul class="skill-pills">
           <li>Figma</li>
           <li>Wireframing</li>
           <li>Prototyping</li>
@@ -116,12 +144,14 @@
       </div>
 
       <div class="skill-block reveal">
-        <span class="skill-num">iii.</span>
-        <h3>Backend & Tools</h3>
-        <ul>
+        <div class="skill-header">
+          <span class="skill-num">iii.</span>
+          <h3>⚙️ Backend &amp; Tools</h3>
+        </div>
+        <ul class="skill-pills">
           <li>Supabase</li>
           <li>REST APIs</li>
-          <li>Git & GitHub</li>
+          <li>Git &amp; GitHub</li>
           <li>VS Code</li>
           <li>Vercel</li>
           <li>Chrome DevTools</li>
@@ -129,9 +159,11 @@
       </div>
 
       <div class="skill-block reveal">
-        <span class="skill-num">iv.</span>
-        <h3>Soft Skills</h3>
-        <ul>
+        <div class="skill-header">
+          <span class="skill-num">iv.</span>
+          <h3>🌿 Soft Skills</h3>
+        </div>
+        <ul class="skill-pills">
           <li>Team Leadership</li>
           <li>Event Coordination</li>
           <li>Time Management</li>
@@ -141,48 +173,52 @@
 
     </section>
 
-    <!-- ============================================================
-         HOW I WORK — Editorial Workflow
-         ============================================================ -->
+    <!-- HOW I WORK -->
     <section class="section-label">
       <span class="num">02</span>
       <h2>How I Work</h2>
       <span class="line"></span>
     </section>
 
-    <section class="workflow-editorial">
+        <section class="workflow-editorial">
 
       <div class="workflow-step reveal">
-        <div class="step-num">i.</div>
-        <h3>Sketch & Dream</h3>
-        <p>Pen and paper first — always. Ideas flow better when not constrained by a screen.</p>
+        <span class="step-num">i.</span>
+        <div class="step-content">
+          <h3>✏️ Sketch &amp; Dream</h3>
+          <p>Pen and paper first — always. Ideas flow better when not constrained by a screen.</p>
+        </div>
       </div>
 
       <div class="workflow-step reveal">
-        <div class="step-num">ii.</div>
-        <h3>Prototype Fast</h3>
-        <p>Code small, test with friends. Fast feedback beats perfect first drafts.</p>
+        <span class="step-num">ii.</span>
+        <div class="step-content">
+          <h3>⚡ Prototype Fast</h3>
+          <p>Code small, test with friends. Fast feedback beats perfect first drafts.</p>
+        </div>
       </div>
 
       <div class="workflow-step reveal">
-        <div class="step-num">iii.</div>
-        <h3>Polish & Animate</h3>
-        <p>Micro-interactions make it memorable. Details are what people feel.</p>
+        <span class="step-num">iii.</span>
+        <div class="step-content">
+          <h3>✨ Polish &amp; Animate</h3>
+          <p>Micro-interactions make it memorable. Details are what people feel.</p>
+        </div>
       </div>
 
       <div class="workflow-step reveal">
-        <div class="step-num">iv.</div>
-        <h3>Ship & Share</h3>
-        <p>GitHub Pages and Vercel are my best friends. Done is better than perfect.</p>
+        <span class="step-num">iv.</span>
+        <div class="step-content">
+          <h3>🚀 Ship &amp; Share</h3>
+          <p>GitHub Pages and Vercel are my best friends. Done is better than perfect.</p>
+        </div>
       </div>
 
     </section>
 
-    <!-- ============================================================
-         CURRENTLY LEARNING
-         ============================================================ -->
+    <!-- CURRENTLY LEARNING -->
     <section class="section-label">
-      <span class="num">iii.</span>
+      <span class="num">03.</span>
       <h2>Currently Learning</h2>
       <span class="line"></span>
     </section>
@@ -203,9 +239,13 @@
     © Dorothy Tepace · 2026
   </footer>
 
-  <!-- ========== SCRIPT ========== -->
+
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    /* ========== NAV SWAP ON SCROLL ========== */
+
+    /* ============================================================
+       1. NAV SWAP — top nav hides, side nav appears on scroll
+       ============================================================ */
     (function () {
       const topNav = document.getElementById('topNav');
       const sideNav = document.getElementById('sideNav');
@@ -226,7 +266,10 @@
       window.addEventListener('load', updateNav);
     })();
 
-    /* ========== SCROLL REVEAL ========== */
+
+    /* ============================================================
+       2. SCROLL REVEAL
+       ============================================================ */
     (function () {
       const reveals = document.querySelectorAll('.reveal');
       if (!reveals.length) return;
@@ -244,6 +287,36 @@
 
       reveals.forEach(el => observer.observe(el));
     })();
+
+
+    /* ============================================================
+       3. DARK MODE TOGGLE
+       ============================================================ */
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+
+      const icon = toggle.querySelector('.theme-toggle-icon');
+      const STORAGE_KEY = 'theme';
+
+      /* Apply saved theme immediately */
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (icon) icon.textContent = '🌙';
+      } else {
+        if (icon) icon.textContent = '☀️';
+      }
+
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+
+        if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+        localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
+      });
+    })();
+
   </script>
 
 </body>

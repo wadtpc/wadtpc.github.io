@@ -4,21 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dorothy Tepace · Projects</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Projects by Dorothy Tepace — full-stack apps, UI/UX work, and event design." />
+  <meta name="theme-color" content="#fdf6ec" />
+  <meta name="author" content="Dorothy Tepace" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌷</text></svg>" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="dark-page">
+<body>
 
-    <!-- ============================================================
+  <!-- ============================================================
+       ANIMATED BACKGROUND LAYERS
+       ============================================================ -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+  </div>
+  <div class="bg-stars" aria-hidden="true"></div>
+
+
+  <!-- ============================================================
        DARK MODE TOGGLE
        ============================================================ -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-    <span class="theme-toggle-icon theme-toggle-sun">☀️</span>
-    <span class="theme-toggle-icon theme-toggle-moon">🌙</span>
+    <span class="theme-toggle-icon">☀️</span>
   </button>
+
 
   <!-- ========== TOP NAV ========== -->
   <nav class="top-nav" id="topNav">
@@ -135,9 +162,13 @@
     © Dorothy Tepace · 2026
   </footer>
 
-  <!-- ========== SCRIPT ========== -->
+
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    /* ========== NAV SWAP ON SCROLL ========== */
+
+    /* ============================================================
+       1. NAV SWAP — top nav hides, side nav appears on scroll
+       ============================================================ */
     (function () {
       const topNav = document.getElementById('topNav');
       const sideNav = document.getElementById('sideNav');
@@ -158,7 +189,10 @@
       window.addEventListener('load', updateNav);
     })();
 
-    /* ========== SCROLL REVEAL ========== */
+
+    /* ============================================================
+       2. SCROLL REVEAL
+       ============================================================ */
     (function () {
       const reveals = document.querySelectorAll('.reveal');
       if (!reveals.length) return;
@@ -177,7 +211,37 @@
       reveals.forEach(el => observer.observe(el));
     })();
 
-    /* ========== PROJECT MODALS ========== */
+
+    /* ============================================================
+       3. DARK MODE TOGGLE
+       ============================================================ */
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      if (!toggle) return;
+
+      const icon = toggle.querySelector('.theme-toggle-icon');
+      const STORAGE_KEY = 'theme';
+
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (icon) icon.textContent = '🌙';
+      } else {
+        if (icon) icon.textContent = '☀️';
+      }
+
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+        localStorage.setItem(STORAGE_KEY, isDark ? 'dark' : 'light');
+      });
+    })();
+
+
+    /* ============================================================
+       4. PROJECT MODALS
+       ============================================================ */
     (function () {
       const overlay = document.getElementById('modalOverlay');
       if (!overlay) return;
@@ -265,7 +329,7 @@
             <div class="modal-screenshots single">
               <img src="images/mindcheck/1.png" alt="MindCheck app screens overview" />
             </div>
-            <p style="font-size: 0.85rem; color: var(--muted); font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">
+            <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">
               Overview of all app screens — mood check-in, journal, dashboard, and study coach.
             </p>
 
@@ -393,11 +457,12 @@
             <h4>What I Built</h4>
             <ul>
               <li>Multi-page site: Home · About · Projects · Reach Me</li>
-              <li>Custom rose/ivory/burgundy design system</li>
-              <li>Rose Bloom splash animation</li>
+              <li>Custom cottagecore pixel design system</li>
+              <li>Animated splash screen with blooming flower</li>
               <li>Top nav that becomes a side nav on scroll</li>
               <li>Click-to-open modal popups for each project</li>
-              <li>Horizontal filmstrip gallery with lightbox navigation</li>
+              <li>Auto-playing slideshow gallery with lightbox</li>
+              <li>Neon cyberpunk dark mode toggle</li>
               <li>Fully responsive (desktop, tablet, mobile)</li>
             </ul>
 
@@ -486,6 +551,7 @@
         if (e.key === 'Escape') closeModal();
       });
     })();
+
   </script>
 
 </body>

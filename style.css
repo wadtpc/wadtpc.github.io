@@ -1126,91 +1126,294 @@ a:hover { color: var(--moss); }
   font-weight: 700;
 }
 
-/* Skills editorial */
+/* ---------- Skills — Arcade Cards ---------- */
 .skills-editorial {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
   margin-bottom: 6rem;
 }
 
 .skill-block {
-  padding-top: 1.5rem;
-  border-top: 3px dashed var(--moss);
+  position: relative;
+  padding: 2rem 1.8rem;
+  background: var(--bg-card);
+  border: 3px solid var(--moss);
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--rose);
+  transition: all 0.3s var(--ease-out);
+  overflow: hidden;
+}
+
+/* Corner brackets — arcade UI feel */
+.skill-block::before,
+.skill-block::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--butter-deep);
+  opacity: 0.8;
+  transition: all 0.3s var(--ease-out);
+  pointer-events: none;
+}
+
+.skill-block::before {
+  top: 6px;
+  left: 6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.skill-block::after {
+  bottom: 6px;
+  right: 6px;
+  border-left: none;
+  border-top: none;
+}
+
+.skill-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 0 var(--butter);
+  border-color: var(--rose-deep);
+}
+
+.skill-block:hover::before,
+.skill-block:hover::after {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+  border-color: var(--rose);
+}
+
+/* ---------- Skills — arcade cards (dark mode) ---------- */
+body.dark-mode .skill-block {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.3),
+    inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+body.dark-mode .skill-block:hover {
+  border-color: var(--rose);
+  box-shadow:
+    0 0 30px rgba(255, 46, 136, 0.6),
+    0 0 60px rgba(255, 46, 136, 0.25),
+    inset 0 0 25px rgba(255, 46, 136, 0.06);
+}
+
+body.dark-mode .skill-block::before,
+body.dark-mode .skill-block::after {
+  border-color: var(--butter);
+  filter: drop-shadow(0 0 6px var(--butter));
+}
+
+body.dark-mode .skill-block:hover::before,
+body.dark-mode .skill-block:hover::after {
+  border-color: var(--rose);
+  filter: drop-shadow(0 0 10px var(--rose));
+}
+
+body.dark-mode .skill-header {
+  border-bottom-color: var(--moss);
+  border-bottom-style: dashed;
+}
+
+body.dark-mode .skill-block .skill-num {
+  color: var(--butter);
+  text-shadow: 0 0 8px var(--butter);
+}
+
+body.dark-mode .skill-block h3 {
+  color: var(--moss);
+  text-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8),
+    0 0 16px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode .skill-pills li {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--moss);
+  border-color: var(--moss);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+body.dark-mode .skill-pills li:hover {
+  background: var(--rose);
+  color: var(--bg);
+  box-shadow: 0 0 15px rgba(255, 46, 136, 0.8);
+  border-color: var(--rose);
+}
+
+/* Header row */
+.skill-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px dashed var(--rose);
 }
 
 .skill-block .skill-num {
-  display: block;
+  display: inline-block;
   font-family: var(--font-pixel);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   color: var(--rose-deep);
   letter-spacing: 0.1em;
-  margin-bottom: 0.6rem;
 }
 
 .skill-block h3 {
-  font-size: 0.75rem;
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: var(--moss);
   text-shadow: 1px 1px 0 var(--rose);
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
-.skill-block ul {
-  list-style: none;
+/* Skill pills */
+.skill-pills {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
 }
 
-.skill-block li {
-  padding: 0.3rem 0;
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--text-dim);
-  letter-spacing: 0.02em;
-  border-bottom: 1px dotted var(--rose);
-}
-
-.skill-block li::before {
-  content: "🌿 ";
+.skill-pills li {
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-lighter);
   color: var(--moss);
+  border: 2px solid var(--rose);
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s var(--ease-out);
+  cursor: default;
+}
+
+.skill-pills li:hover {
+  background: var(--rose);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--butter);
 }
 
 /* Workflow */
+/* ---------- Workflow — Arcade Step Cards ---------- */
 .workflow-editorial {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  gap: 1.8rem;
   margin-bottom: 6rem;
 }
 
 .workflow-step {
-  padding: 2rem 0;
-  border-top: 3px dashed var(--rose-deep);
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 2rem 1.8rem;
+  background: var(--bg-card);
+  border: 3px solid var(--moss);
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--rose);
+  transition: all 0.3s var(--ease-out);
+  overflow: hidden;
 }
 
+/* Corner brackets — same as skills */
+.workflow-step::before,
+.workflow-step::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--butter-deep);
+  opacity: 0.8;
+  transition: all 0.3s var(--ease-out);
+  pointer-events: none;
+}
+
+.workflow-step::before {
+  top: 6px;
+  left: 6px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.workflow-step::after {
+  bottom: 6px;
+  right: 6px;
+  border-left: none;
+  border-top: none;
+}
+
+.workflow-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 0 var(--butter);
+  border-color: var(--rose-deep);
+}
+
+.workflow-step:hover::before,
+.workflow-step:hover::after {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+  border-color: var(--rose);
+}
+
+/* Number badge */
 .workflow-step .step-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--rose);
+  color: var(--moss);
+  border: 3px solid var(--moss);
+  border-radius: 50%;
+  box-shadow: 0 4px 0 var(--rose-deep);
   font-family: var(--font-pixel);
-  font-size: 1.4rem;
-  color: var(--rose-deep);
+  font-size: 0.85rem;
   line-height: 1;
-  letter-spacing: 0.05em;
-  text-shadow: 2px 2px 0 var(--butter);
-  margin-bottom: 1rem;
+  letter-spacing: 0;
+  transition: all 0.3s var(--ease-out);
+}
+
+.workflow-step:hover .step-num {
+  background: var(--butter);
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 6px 0 var(--butter-deep);
+}
+
+/* Content */
+.workflow-step .step-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .workflow-step h3 {
+  font-family: var(--font-pixel);
   font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--moss);
   text-shadow: 1px 1px 0 var(--rose);
   margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
 .workflow-step p {
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text-dim);
+  margin: 0;
 }
 
 /* Section labels */
@@ -2165,28 +2368,508 @@ a:hover { color: var(--moss); }
 }
 
 /* ============================================================
-   20. THEME TOGGLE — dark mode button
+   21. DARK MODE — NEON CYBERPUNK EDITION
+   ============================================================ */
+
+body.dark-mode {
+  --bg: #0a0612;
+  --bg-lighter: #120a1e;
+  --bg-card: #1a1030;
+  --bg-elevated: #241640;
+
+  --moss: #00f0ff;
+  --moss-light: #7ef4ff;
+
+  --rose: #ff2e88;
+  --rose-deep: #ff5ea8;
+
+  --butter: #ffe600;
+  --butter-deep: #fff44f;
+
+  --lavender: #b366ff;
+
+  --text: #e8f8ff;
+  --text-dim: #a4b8d0;
+  --text-muted: #6a7a95;
+
+  --border: #2a1e4a;
+  --border-bright: #00f0ff;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Workflow — arcade step cards (dark mode) ---------- */
+body.dark-mode .workflow-step {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.3),
+    inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+body.dark-mode .workflow-step:hover {
+  border-color: var(--rose);
+  box-shadow:
+    0 0 30px rgba(255, 46, 136, 0.6),
+    0 0 60px rgba(255, 46, 136, 0.25),
+    inset 0 0 25px rgba(255, 46, 136, 0.06);
+}
+
+body.dark-mode .workflow-step::before,
+body.dark-mode .workflow-step::after {
+  border-color: var(--butter);
+  filter: drop-shadow(0 0 6px var(--butter));
+}
+
+body.dark-mode .workflow-step:hover::before,
+body.dark-mode .workflow-step:hover::after {
+  border-color: var(--rose);
+  filter: drop-shadow(0 0 10px var(--rose));
+}
+
+body.dark-mode .workflow-step .step-num {
+  background: var(--moss);
+  color: var(--bg);
+  border-color: var(--moss);
+  box-shadow:
+    0 4px 0 var(--rose),
+    0 0 20px rgba(0, 240, 255, 0.7);
+  text-shadow: none;
+}
+
+body.dark-mode .workflow-step:hover .step-num {
+  background: var(--rose);
+  box-shadow:
+    0 6px 0 var(--moss),
+    0 0 30px rgba(255, 46, 136, 0.9);
+}
+
+body.dark-mode .workflow-step h3 {
+  color: var(--moss);
+  text-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8),
+    0 0 16px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode .workflow-step p {
+  color: var(--text-dim);
+}
+
+/* Grid overlay in dark mode — subtle cyan lines */
+body.dark-mode::before {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 46, 136, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-scroll 30s linear infinite;
+}
+
+@keyframes grid-scroll {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 40px 40px, 40px 40px; }
+}
+
+body.dark-mode::after {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  mix-blend-mode: screen;
+}
+
+/* ---------- Typography — glowing text ---------- */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: var(--moss);
+  text-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8),
+    0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode p {
+  color: var(--text-dim);
+}
+
+body.dark-mode a {
+  color: var(--rose);
+  text-shadow: 0 0 8px rgba(255, 46, 136, 0.5);
+}
+
+body.dark-mode a:hover {
+  color: var(--moss);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+}
+
+/* ---------- Top Nav ---------- */
+body.dark-mode .top-nav {
+  background: rgba(10, 6, 18, 0.9);
+  border-bottom: 3px solid var(--moss);
+  box-shadow:
+    0 4px 0 var(--rose),
+    0 0 20px rgba(0, 240, 255, 0.3),
+    0 0 40px rgba(255, 46, 136, 0.15);
+}
+
+body.dark-mode .brand {
+  background: var(--rose);
+  border-color: var(--moss);
+  color: var(--bg);
+  text-shadow: none;
+  box-shadow:
+    0 4px 0 var(--moss),
+    0 0 20px rgba(255, 46, 136, 0.6);
+}
+
+body.dark-mode .brand:hover {
+  background: var(--moss);
+  box-shadow:
+    0 6px 0 var(--rose),
+    0 0 30px rgba(0, 240, 255, 0.8);
+}
+
+body.dark-mode .nav-links a {
+  color: var(--text-dim);
+  border: 2px solid transparent;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: var(--moss);
+  border-color: var(--moss);
+  background: rgba(0, 240, 255, 0.08);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+body.dark-mode .nav-links a.active {
+  color: var(--bg);
+  background: var(--moss);
+  border-color: var(--moss);
+  box-shadow:
+    0 3px 0 var(--rose),
+    0 0 20px rgba(0, 240, 255, 0.7);
+}
+
+/* ---------- Side Nav ---------- */
+body.dark-mode .side-nav {
+  background: rgba(10, 6, 18, 0.95);
+  border-color: var(--moss);
+  box-shadow:
+    0 6px 0 var(--rose),
+    0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode .side-link {
+  color: var(--text-dim);
+}
+
+body.dark-mode .side-link:hover {
+  background: var(--rose);
+  color: var(--bg);
+  border-color: var(--moss);
+  box-shadow: 0 0 15px rgba(255, 46, 136, 0.7);
+}
+
+body.dark-mode .side-link.active {
+  background: var(--moss);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+}
+
+/* ---------- Gallery Tiles — glowing cards ---------- */
+body.dark-mode .gallery-tile {
+  background: var(--bg-card);
+  border: 3px solid var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.35),
+    0 0 40px rgba(0, 240, 255, 0.15),
+    inset 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+body.dark-mode .gallery-tile:hover {
+  border-color: var(--rose);
+  box-shadow:
+    0 0 30px rgba(255, 46, 136, 0.6),
+    0 0 60px rgba(255, 46, 136, 0.3),
+    0 0 90px rgba(0, 240, 255, 0.2),
+    inset 0 0 30px rgba(255, 46, 136, 0.08);
+  transform: translateY(-6px);
+}
+
+body.dark-mode .gallery-tile::after {
+  content: "✿";
+  color: var(--rose);
+  text-shadow:
+    0 0 8px var(--rose),
+    0 0 16px var(--rose);
+}
+
+body.dark-mode .gallery-tile:hover::after {
+  color: var(--moss);
+  text-shadow:
+    0 0 12px var(--moss),
+    0 0 24px var(--moss);
+}
+
+body.dark-mode .gallery-tile::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 6, 18, 0.85) 0%,
+    rgba(10, 6, 18, 0.7) 50%,
+    rgba(10, 6, 18, 0.85) 100%
+  );
+}
+
+body.dark-mode .gallery-tile:hover::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 6, 18, 0.8) 0%,
+    rgba(26, 16, 48, 0.65) 50%,
+    rgba(10, 6, 18, 0.8) 100%
+  );
+}
+
+body.dark-mode .gallery-tile-index {
+  color: var(--butter);
+  text-shadow: 0 0 10px var(--butter);
+}
+
+body.dark-mode .gallery-tile h3 {
+  color: var(--moss);
+  text-shadow:
+    0 0 10px rgba(0, 240, 255, 0.9),
+    0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+body.dark-mode .gallery-tile:hover h3 {
+  color: var(--rose);
+  text-shadow:
+    0 0 12px rgba(255, 46, 136, 1),
+    0 0 24px rgba(255, 46, 136, 0.6);
+}
+
+body.dark-mode .gallery-tile-meta {
+  color: var(--text-dim);
+}
+
+body.dark-mode .gallery-tile-tags span {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--moss);
+  border: 2px solid var(--moss);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode .gallery-tile-hint {
+  color: var(--butter);
+  text-shadow: 0 0 8px var(--butter);
+}
+
+/* ---------- Project cards (Projects page) ---------- */
+body.dark-mode .proj-card,
+body.dark-mode .skill-block,
+body.dark-mode .workflow-step {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.25),
+    inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+body.dark-mode .proj-card:hover {
+  border-color: var(--rose);
+  box-shadow:
+    0 0 30px rgba(255, 46, 136, 0.5),
+    0 0 60px rgba(255, 46, 136, 0.2);
+}
+
+body.dark-mode .proj-card h3 {
+  color: var(--moss);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+body.dark-mode .proj-tags span {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--moss);
+  border-color: var(--moss);
+}
+
+/* ---------- Fun fact box, QR block ---------- */
+body.dark-mode .fun-fact-box,
+body.dark-mode .qr-block {
+  background: var(--bg-card);
+  border-color: var(--rose);
+  color: var(--text);
+  box-shadow:
+    0 0 20px rgba(255, 46, 136, 0.3),
+    inset 0 0 20px rgba(255, 46, 136, 0.05);
+}
+
+body.dark-mode .fun-fact-box strong,
+body.dark-mode .qr-block .qr-caption {
+  color: var(--moss);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+/* ---------- Modal ---------- */
+body.dark-mode .modal {
+  background: var(--bg-lighter);
+  color: var(--text);
+  border: 4px solid var(--moss);
+  box-shadow:
+    0 0 30px rgba(0, 240, 255, 0.5),
+    0 0 60px rgba(255, 46, 136, 0.2),
+    0 10px 0 var(--rose);
+}
+
+body.dark-mode .modal-close {
+  background: var(--bg-card);
+  color: var(--rose);
+  border-color: var(--rose);
+}
+
+body.dark-mode .modal-close:hover {
+  background: var(--rose);
+  color: var(--bg);
+  box-shadow: 0 0 20px var(--rose);
+}
+
+body.dark-mode .modal-header h2 {
+  color: var(--moss);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+}
+
+body.dark-mode .modal-content p,
+body.dark-mode .modal-content li {
+  color: var(--text-dim);
+}
+
+body.dark-mode .modal-meta {
+  color: var(--butter);
+  text-shadow: 0 0 8px var(--butter);
+}
+
+body.dark-mode .modal-tags span {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--moss);
+  border: 2px solid var(--moss);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+/* ---------- Contact rows (Reach page) ---------- */
+body.dark-mode .contact-row {
+  color: var(--text);
+  border-bottom-color: rgba(0, 240, 255, 0.2);
+}
+
+body.dark-mode .contact-row .contact-label {
+  color: var(--butter);
+  text-shadow: 0 0 8px var(--butter);
+}
+
+body.dark-mode .contact-row .contact-value {
+  color: var(--text);
+}
+
+body.dark-mode .contact-row:hover {
+  border-bottom-color: var(--moss);
+}
+
+body.dark-mode .contact-row:hover .contact-value {
+  color: var(--moss);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+body.dark-mode .contact-row .contact-arrow {
+  color: var(--rose);
+}
+
+body.dark-mode .contact-row:hover .contact-arrow {
+  color: var(--moss);
+  text-shadow: 0 0 10px var(--moss);
+}
+
+/* ---------- Statement quote ---------- */
+body.dark-mode .statement-divider::before,
+body.dark-mode .statement-divider::after {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--moss) 0, var(--moss) 6px,
+    transparent 6px, transparent 12px
+  );
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+body.dark-mode .statement-divider span {
+  color: var(--rose);
+  text-shadow: 0 0 10px var(--rose);
+}
+
+body.dark-mode .statement-quote p {
+  color: var(--moss);
+  text-shadow:
+    0 0 12px rgba(0, 240, 255, 0.7),
+    0 0 24px rgba(0, 240, 255, 0.3);
+}
+
+body.dark-mode .statement-accent {
+  color: var(--rose);
+  text-shadow:
+    0 0 12px rgba(255, 46, 136, 0.8),
+    0 0 24px rgba(255, 46, 136, 0.4);
+}
+
+body.dark-mode .statement-attribution cite {
+  color: var(--butter);
+  text-shadow: 0 0 8px var(--butter);
+}
+
+body.dark-mode .statement-line {
+  background: var(--moss);
+  box-shadow: 0 0 8px var(--moss);
+}
+
+/* ---------- Learning tags ---------- */
+body.dark-mode .learning-tag {
+  background: var(--bg-card);
+  color: var(--moss);
+  border: 2px solid var(--moss);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+
+body.dark-mode .learning-tag:hover {
+  background: var(--rose);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(255, 46, 136, 0.8);
+}
+
+/* ---------- Footer ---------- */
+body.dark-mode .site-footer {
+  color: var(--text-dim);
+  border-top-color: var(--moss);
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.3);
+}
+
+/* ---------- Theme toggle in dark mode ---------- */
+/* ============================================================
+   20. THEME TOGGLE — circle with sun/moon swap
    ============================================================ */
 
 .theme-toggle {
   position: fixed;
-  bottom: 1.4rem;
+  top: 1rem;
   right: 1.4rem;
-  top: auto;
   z-index: 200;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   padding: 0;
-  background: var(--bg-card);
+  background: var(--rose);
   border: 3px solid var(--moss);
   border-radius: 50%;
-  box-shadow: 0 4px 0 var(--rose);
+  box-shadow: 0 4px 0 var(--rose-deep);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s var(--ease-out);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   overflow: hidden;
 }
 
@@ -2198,244 +2881,28 @@ a:hover { color: var(--moss); }
 
 .theme-toggle:active {
   transform: translateY(2px) rotate(0);
-  box-shadow: 0 2px 0 var(--rose);
+  box-shadow: 0 2px 0 var(--rose-deep);
 }
 
 .theme-toggle-icon {
-  position: absolute;
-  transition: transform 0.5s var(--ease-spring), opacity 0.3s var(--ease-out);
+  display: inline-block;
   line-height: 1;
+  transition: transform 0.4s var(--ease-spring);
 }
 
-.theme-toggle-moon {
-  transform: translateY(-40px) rotate(-40deg);
-  opacity: 0;
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(20deg) scale(1.1);
 }
 
-/* When dark mode is active */
-body.dark-mode .theme-toggle-sun {
-  transform: translateY(40px) rotate(40deg);
-  opacity: 0;
-}
-
-body.dark-mode .theme-toggle-moon {
-  transform: translateY(0) rotate(0);
-  opacity: 1;
-}
-
-/* On mobile, move the toggle below the top nav */
+/* Mobile */
 @media (max-width: 768px) {
   .theme-toggle {
-    position: fixed;
-    top: 1rem;
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+    top: 0.9rem;
     right: 1rem;
-    bottom: auto;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
   }
-
-  /* Top nav gets extra right padding so "Reach Me" clears the toggle */
-  .top-nav {
-    padding: 1rem 4.5rem 1rem 1.2rem;
-  }
-}
-
-/* ============================================================
-   21. DARK MODE — theme override
-   ============================================================ */
-
-body.dark-mode {
-  --bg: #1a1414;
-  --bg-lighter: #221a1a;
-  --bg-card: #2a2020;
-  --bg-elevated: #332626;
-
-  --moss: #a8b89c;
-  --moss-light: #c4d1b6;
-
-  --rose: #d9a5a0;
-  --rose-deep: #e8b4b8;
-
-  --butter: #f5d98d;
-  --butter-deep: #ffd700;
-
-  --text: #f0e8e0;
-  --text-dim: #b8ada0;
-  --text-muted: #8a7a6a;
-
-  --border: #3a2e2a;
-  --border-bright: #a8b89c;
-
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* Global text overrides */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4 {
-  color: var(--moss);
-  text-shadow: 2px 2px 0 rgba(217, 165, 160, 0.3);
-}
-
-body.dark-mode p {
-  color: var(--text-dim);
-}
-
-body.dark-mode a {
-  color: var(--rose-deep);
-}
-
-body.dark-mode a:hover {
-  color: var(--moss);
-}
-
-/* Body background — darker, less visible dots */
-body.dark-mode::before {
-  background-image: radial-gradient(circle, rgba(217, 165, 160, 0.12) 1.5px, transparent 1.5px);
-}
-
-body.dark-mode::after {
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  mix-blend-mode: screen;
-}
-
-/* Top nav */
-body.dark-mode .top-nav {
-  background: rgba(26, 20, 20, 0.95);
-  border-bottom-color: var(--moss);
-  box-shadow: 0 4px 0 rgba(217, 165, 160, 0.3);
-}
-
-body.dark-mode .nav-links a {
-  color: var(--text-dim);
-}
-
-body.dark-mode .nav-links a:hover,
-body.dark-mode .nav-links a.active {
-  color: var(--bg);
-}
-
-/* Side nav */
-body.dark-mode .side-nav {
-  background: rgba(42, 32, 32, 0.95);
-  border-color: var(--moss);
-  box-shadow: 0 6px 0 rgba(217, 165, 160, 0.3);
-}
-
-body.dark-mode .side-link {
-  color: var(--text-dim);
-}
-
-body.dark-mode .side-link.active {
-  background: var(--moss);
-  color: var(--bg);
-}
-
-/* Tiles, cards, modals */
-body.dark-mode .gallery-tile {
-  background: var(--bg-card);
-  border-color: var(--moss);
-  box-shadow: 0 6px 0 rgba(217, 165, 160, 0.25), 0 12px 24px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-mode .gallery-tile::before {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 20, 20, 0.9) 0%,
-    rgba(26, 20, 20, 0.75) 50%,
-    rgba(26, 20, 20, 0.9) 100%
-  );
-}
-
-body.dark-mode .gallery-tile:hover::before {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 20, 20, 0.85) 0%,
-    rgba(42, 32, 32, 0.7) 50%,
-    rgba(26, 20, 20, 0.85) 100%
-  );
-}
-
-body.dark-mode .gallery-tile h3 {
-  color: var(--moss);
-  text-shadow: 2px 2px 0 rgba(217, 165, 160, 0.4);
-}
-
-body.dark-mode .gallery-tile-meta {
-  color: var(--text-dim);
-}
-
-body.dark-mode .gallery-tile-tags span {
-  background: var(--bg-elevated);
-  color: var(--moss);
-  border-color: var(--rose);
-}
-
-body.dark-mode .proj-card,
-body.dark-mode .skill-block,
-body.dark-mode .workflow-step {
-  background: var(--bg-card);
-  border-color: var(--moss);
-}
-
-body.dark-mode .fun-fact-box,
-body.dark-mode .qr-block {
-  background: var(--bg-card);
-  border-color: var(--rose);
-  color: var(--text);
-}
-
-body.dark-mode .modal {
-  background: var(--bg-lighter);
-  color: var(--text);
-}
-
-body.dark-mode .modal-header h2 {
-  color: var(--moss);
-}
-
-body.dark-mode .modal-content p,
-body.dark-mode .modal-content li {
-  color: var(--text-dim);
-}
-
-body.dark-mode .contact-row {
-  color: var(--text);
-  border-bottom-color: rgba(217, 165, 160, 0.3);
-}
-
-body.dark-mode .contact-row .contact-value {
-  color: var(--text);
-}
-
-body.dark-mode .contact-row:hover .contact-value {
-  color: var(--moss);
-}
-
-/* Section dividers */
-body.dark-mode .statement-divider::before,
-body.dark-mode .statement-divider::after {
-  background: repeating-linear-gradient(
-    90deg,
-    var(--rose-deep) 0, var(--rose-deep) 6px,
-    transparent 6px, transparent 12px
-  );
-}
-
-body.dark-mode .statement-quote p {
-  color: var(--moss);
-  text-shadow: 2px 2px 0 rgba(217, 165, 160, 0.3);
-}
-
-body.dark-mode .statement-attribution cite {
-  color: var(--moss);
-}
-
-body.dark-mode .statement-line {
-  background: var(--moss);
 }
 
 
@@ -2530,14 +2997,39 @@ body.dark-mode .statement-line {
   100% { opacity: 0.9; transform: scale(1.02); }
 }
 
-/* In dark mode, stars glow more */
+/* In dark mode — stars turn neon and blobs glow like plasma */
 body.dark-mode .bg-stars {
-  opacity: 0.85;
+  opacity: 0.9;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, var(--moss), transparent),
+    radial-gradient(2px 2px at 60% 70%, var(--rose), transparent),
+    radial-gradient(1px 1px at 50% 50%, var(--butter), transparent),
+    radial-gradient(1px 1px at 80% 10%, var(--moss), transparent),
+    radial-gradient(2px 2px at 90% 60%, var(--rose), transparent),
+    radial-gradient(1px 1px at 10% 80%, var(--butter), transparent),
+    radial-gradient(1px 1px at 35% 25%, var(--moss), transparent),
+    radial-gradient(2px 2px at 70% 85%, var(--rose), transparent);
+  filter: drop-shadow(0 0 4px currentColor);
 }
 
 body.dark-mode .bg-blob {
-  opacity: 0.15;
-  filter: blur(80px);
+  opacity: 0.35;
+  filter: blur(90px) saturate(1.5);
+}
+
+body.dark-mode .bg-blob-1 {
+  background: var(--moss);
+  box-shadow: 0 0 80px var(--moss);
+}
+
+body.dark-mode .bg-blob-2 {
+  background: var(--rose);
+  box-shadow: 0 0 80px var(--rose);
+}
+
+body.dark-mode .bg-blob-3 {
+  background: var(--lavender);
+  box-shadow: 0 0 80px var(--lavender);
 }
 
 /* Respect reduced motion */
@@ -2545,5 +3037,244 @@ body.dark-mode .bg-blob {
   .bg-blob,
   .bg-stars {
     animation: none !important;
+  }
+}
+
+/* ============================================================
+   23. REACH ME — additional sections
+   ============================================================ */
+
+/* ---------- Availability badge ---------- */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--bg-card);
+  border: 3px solid var(--moss);
+  border-radius: 40px;
+  box-shadow: 0 4px 0 var(--rose);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--moss);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.8rem;
+  transition: all 0.3s var(--ease-out);
+}
+
+.availability-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--butter);
+}
+
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  background: #4ade80;
+  border: 2px solid var(--moss);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+  animation: availability-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes availability-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.8);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 16px rgba(74, 222, 128, 1);
+  }
+}
+
+/* ---------- Info cards (Currently + Best way) ---------- */
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 260px;
+}
+
+.info-card {
+  padding: 1.5rem 1.6rem;
+  background: var(--bg-card);
+  border: 3px solid var(--moss);
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--rose);
+  transition: all 0.3s var(--ease-out);
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 var(--butter);
+  border-color: var(--rose-deep);
+}
+
+.info-card-title {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--moss);
+  text-shadow: 1px 1px 0 var(--rose);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px dashed var(--rose);
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.info-list li strong {
+  color: var(--moss);
+  font-weight: 700;
+}
+
+.info-check {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.info-list-dim {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+/* ---------- Response time line ---------- */
+.response-time {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1.4rem;
+  background: var(--bg-card);
+  border: 2px dashed var(--rose);
+  border-radius: 40px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  transition: all 0.3s var(--ease-out);
+}
+
+.response-time:hover {
+  border-style: solid;
+  border-color: var(--moss);
+  color: var(--moss);
+}
+
+.response-icon {
+  font-size: 1rem;
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   DARK MODE — Reach Me additions
+   ============================================================ */
+
+body.dark-mode .availability-badge {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  color: var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.3),
+    0 4px 0 var(--rose);
+}
+
+body.dark-mode .availability-badge:hover {
+  box-shadow:
+    0 0 30px rgba(0, 240, 255, 0.5),
+    0 6px 0 var(--rose);
+}
+
+body.dark-mode .availability-dot {
+  background: var(--moss);
+  border-color: var(--moss);
+  box-shadow: 0 0 12px var(--moss);
+}
+
+body.dark-mode .info-card {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.3),
+    inset 0 0 20px rgba(0, 240, 255, 0.03);
+}
+
+body.dark-mode .info-card:hover {
+  border-color: var(--rose);
+  box-shadow:
+    0 0 30px rgba(255, 46, 136, 0.5),
+    0 0 60px rgba(255, 46, 136, 0.2);
+}
+
+body.dark-mode .info-card-title {
+  color: var(--moss);
+  text-shadow:
+    0 0 8px rgba(0, 240, 255, 0.8),
+    0 0 16px rgba(0, 240, 255, 0.4);
+  border-bottom-color: var(--rose);
+}
+
+body.dark-mode .info-list li {
+  color: var(--text-dim);
+}
+
+body.dark-mode .info-list li strong {
+  color: var(--moss);
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+}
+
+body.dark-mode .info-list-dim {
+  color: var(--text-muted);
+}
+
+body.dark-mode .response-time {
+  background: var(--bg-card);
+  border-color: var(--moss);
+  color: var(--moss);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+body.dark-mode .response-time:hover {
+  border-style: solid;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+@media (max-width: 1000px) {
+  .contact-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-card,
+  .qr-block {
+    flex: 1 1 260px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-cards {
+    flex-direction: column;
   }
 }
